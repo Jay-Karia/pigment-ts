@@ -1,3 +1,5 @@
-export default function foo() {
-  console.log("bar");
+function add(a:number, b:number) {
+  return a+b;
 }
+
+export default add;
