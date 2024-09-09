@@ -19,7 +19,7 @@ import { convertColor, lightenColor } from 'pigment-js';
 
 // Convert HEX to RGB
 const rgb = convertColor('#ff5733', 'rgb');
-console.log(rgb); // { r: 255, g: 87, b: 51 }
+console.log(rgb); // 'rgb(255, 87, 51)'
 
 // Lighten a color by 20%
 const lighter = lightenColor('#ff5733', 20);

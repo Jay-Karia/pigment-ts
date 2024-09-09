@@ -1,8 +1,8 @@
-import { convertColor } from './utils/basic/convertColor';
-import { lightenColor, darkenColor } from './utils/basic/lightenDarken';
-import { blendColors } from './utils/basic/blendColors';
-import { setOpacity } from './utils/basic/opacity';
-import { randomColor } from './utils/basic/randomColor';
+import { convertColor } from "./utils/basic/convertColor";
+import { lightenColor, darkenColor } from "./utils/basic/lightenDarken";
+import { blendColors } from "./utils/basic/blendColors";
+import { setOpacity } from "./utils/basic/opacity";
+import { randomColor } from "./utils/basic/randomColor";
 
 export {
   convertColor,
@@ -19,7 +19,7 @@ const PigmentJS = {
   darkenColor,
   blendColors,
   setOpacity,
-  randomColor
-}
+  randomColor,
+};
 
-export default PigmentJS
+export default PigmentJS;

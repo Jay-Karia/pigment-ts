@@ -1,3 +1,3 @@
-export function convertColor() {
-  console.log("convertColor");
+export function convertColor(color:string, to:string):string {
+  return "";
 }
