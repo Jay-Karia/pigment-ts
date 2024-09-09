@@ -1,0 +1,38 @@
+{
+  "name": "pigment-js",
+  "version": "1.0.0",
+  "description": "🎨 A lightweight utility for color manipulation and conversion.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup",
+    "lint": "npx eslint ./src/*",
+    "format": "npx prettier ./src/* --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jay-Karia/pigment-js.git"
+  },
+  "author": "Jay-Karia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jay-Karia/pigment-js/issues"
+  },
+  "homepage": "https://github.com/Jay-Karia/pigment-js#readme",
+  "keywords": [
+    "typescript",
+    "color",
+    "color-conversion",
+    "color-manipulation"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "prettier": "3.3.3",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
+  }
+}
