@@ -1,10 +1,6 @@
 # 🎨 PigmentJS
 
-A lightweight JavaScript utility for seamless color manipulation and conversion between HEX, RGB, and HSL formats.
-
-Tailwind CSS support is built-in, allowing developers to convert colors into Tailwind classes. 
-
-Perfect for developers seeking robust tools for dynamic color management and design optimization in modern web applications.
+A lightweight JavaScript utility for seamless color manipulation and conversion between HEX, RGB, and HSL formats. Tailwind CSS support is built-in, allowing developers to convert colors into Tailwind classes. 
 
 ## Getting Started
 
