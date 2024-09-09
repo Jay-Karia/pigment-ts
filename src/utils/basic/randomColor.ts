@@ -1,3 +1,3 @@
 export function randomColor() {
-  console.log("randomColor")
+  console.log("randomColor");
 }

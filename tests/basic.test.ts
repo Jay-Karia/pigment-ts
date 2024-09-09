@@ -26,7 +26,7 @@ describe("Color conversion", () => {
     "#FFA500": "rgb(255, 165, 0)",
   };
 
-  it.each(Object.keys(hexToRgb))("should convert %s to rgb", (hex) => {
+  it.each(Object.keys(hexToRgb))("should convert %s to rgb", hex => {
     expect(convertColor(hex, "rgb")).toBe(hexToRgb[hex]);
   });
 
@@ -49,7 +49,7 @@ describe("Color conversion", () => {
     "#FFA500": "hsl(39, 100%, 50%)",
   };
 
-  it.each(Object.keys(hexToRgb))("should convert %s to hsl", (hex) => {
+  it.each(Object.keys(hexToRgb))("should convert %s to hsl", hex => {
     expect(convertColor(hex, "hsl")).toBe(hexToHsl[hex]);
   });
 
@@ -72,7 +72,7 @@ describe("Color conversion", () => {
     "rgb(255, 165, 0)": "#FFA500",
   };
 
-  it.each(Object.keys(rgbToHex))("should convert %s to hex", (rgb) => {
+  it.each(Object.keys(rgbToHex))("should convert %s to hex", rgb => {
     expect(convertColor(rgb, "hex")).toBe(rgbToHex[rgb]);
   });
 
@@ -95,7 +95,7 @@ describe("Color conversion", () => {
     "rgb(255, 165, 0)": "hsl(39, 100%, 50%)",
   };
 
-  it.each(Object.keys(rgbToHsl))("should convert %s to hsl", (rgb) => {
+  it.each(Object.keys(rgbToHsl))("should convert %s to hsl", rgb => {
     expect(convertColor(rgb, "hsl")).toBe(rgbToHsl[rgb]);
   });
 
@@ -118,7 +118,7 @@ describe("Color conversion", () => {
     "hsl(39, 100%, 50%)": "#FFA500",
   };
 
-  it.each(Object.keys(hslToHex))("should convert %s to hex", (hsl) => {
+  it.each(Object.keys(hslToHex))("should convert %s to hex", hsl => {
     expect(convertColor(hsl, "hex")).toBe(hslToHex[hsl]);
   });
 
@@ -141,8 +141,7 @@ describe("Color conversion", () => {
     "hsl(39, 100%, 50%)": "rgb(255, 165, 0)",
   };
 
-  it.each(Object.keys(hslToRgb))("should convert %s to rgb", (hsl) => {
+  it.each(Object.keys(hslToRgb))("should convert %s to rgb", hsl => {
     expect(convertColor(hsl, "rgb")).toBe(hslToRgb[hsl]);
   });
-
-})
+});

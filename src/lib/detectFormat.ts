@@ -1,6 +1,6 @@
-import {Format} from "../types/format";
+import { Format } from "../types/format";
 
-export function detectFormat(rawString: string) : Format | null {
+export function detectFormat(rawString: string): Format | null {
   const formats = ["rgb", "hex", "hsl"] as string[];
   const regex = {
     rgb: /rgb\((\d{1,3}), (\d{1,3}), (\d{1,3})\)/,

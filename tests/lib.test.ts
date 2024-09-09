@@ -2,7 +2,7 @@
  * Contains tests for lib functions.
  */
 
-import {detectFormat} from "../src/lib/detectFormat"
+import { detectFormat } from "../src/lib/detectFormat";
 
 describe("Detect color format", () => {
   const tests = {
@@ -26,18 +26,18 @@ describe("Detect color format", () => {
     "hsl(0, 58%, 41%)": "hsl",
     // invalid
     "": null,
-    "random_val": null,
+    random_val: null,
     "hsl(12, 21, 21)": null,
     "hsl(0, 0%, 100%, 7)": null,
-    "rgb": null,
+    rgb: null,
     "rgb(12, 12, 7, 77)": null,
-    "rgba": null,
+    rgba: null,
     "#": null,
     "#1239": null,
     "#1234561": null,
-  }
+  };
 
-  it.each(Object.keys(tests))("should detect %s", (input) => {
+  it.each(Object.keys(tests))("should detect %s", input => {
     expect(detectFormat(input)).toBe(tests[input]);
   });
 });
