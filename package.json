@@ -10,7 +10,7 @@
         "lint": "npx eslint ./src/*",
         "format": "npx prettier ./src/* --write",
         "format:all": "npx prettier . --write",
-        "test": "jest"
+        "test": "jest --coverage"
     },
     "repository": {
         "type": "git",

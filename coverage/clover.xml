@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1725899681114" clover="3.2.0">
+  <project timestamp="1725899681114" name="All files">
+    <metrics statements="13" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="2" elements="22" coveredelements="12" complexity="0" loc="13" ncloc="13" packages="3" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="index.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.lib">
+      <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="detectFormat.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\lib\detectFormat.ts">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="25" type="stmt"/>
+        <line num="5" count="25" type="stmt"/>
+        <line num="11" count="25" type="stmt"/>
+        <line num="12" count="60" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="16" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils.basic">
+      <metrics statements="6" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="1"/>
+      <file name="blendColors.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\utils\basic\blendColors.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="convertColor.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\utils\basic\convertColor.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="90" type="stmt"/>
+      </file>
+      <file name="lightenDarken.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\utils\basic\lightenDarken.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+      </file>
+      <file name="opacity.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\utils\basic\opacity.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+      <file name="randomColor.ts" path="C:\Programming\Web Development\Projects\pigment-js\src\utils\basic\randomColor.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
