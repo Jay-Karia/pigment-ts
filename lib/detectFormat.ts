@@ -1,5 +1,10 @@
 import { Format } from "../types/format";
 
+/**
+ * Detect the format of a color string
+ * @param rawString The string to detect the format of
+ * @returns The detected format
+ */
 export function detectFormat(rawString: string): Format | null {
   const formats = ["rgb", "hex", "hsl"] as string[];
   const regex = {

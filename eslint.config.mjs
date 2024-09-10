@@ -4,6 +4,9 @@ import tseslint from "typescript-eslint";
 
 export default [
   { files: ["**/*.{js,mjs,cjs,ts}"] },
+  {
+    ignores: ["tests/**/*", "dist/**/*"],
+  },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -20,17 +23,6 @@ export default [
         },
       ],
       "no-var": "error",
-      "max-statements": ["warn", 10],
     },
-  },
-  {
-    overrides: [
-      {
-        files: ["tests/**/*"],
-        env: {
-          jest: true,
-        },
-      },
-    ],
   },
 ];

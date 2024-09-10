@@ -1,3 +1,8 @@
+/**
+ * Converts an rgb color to a hex color
+ * @param rgbColor The rgb color to be converted
+ * @returns The converted hex color
+ */
 export function rgbToHex(rgbColor: string): string {
   const rgb = rgbColor
     .replace("rgb(", "")

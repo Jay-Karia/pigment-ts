@@ -1,5 +1,14 @@
+/**
+ * Converts an rgb color to an hsl color
+ * @param rgbColor The rgb color to be converted
+ * @returns The converted hsl color
+ */
 export function rgbToHsl(rgbColor: string): string {
-  const rgb = rgbColor.replace('rgb(', '').replace(')', '').split(',').map(Number);
+  const rgb = rgbColor
+    .replace("rgb(", "")
+    .replace(")", "")
+    .split(",")
+    .map(Number);
 
   const r = rgb[0] / 255;
   const g = rgb[1] / 255;

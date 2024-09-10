@@ -1,11 +1,21 @@
+/**
+ * Converts a number to hex
+ * @param n The number to convert to hex
+ * @returns The hex value of the number
+ */
 function toHex(n: number): string {
-  var hex = n.toString(16);
+  let hex = n.toString(16);
   while (hex.length < 2) {
     hex = "0" + hex;
   }
   return hex;
 }
 
+/**
+ * Converts an hsl color to a hex color
+ * @param hslColor The hsl color to be converted
+ * @returns The converted hex color
+ */
 export function hslToHex(hslColor: string): string {
   const hsl = hslColor
     .replace("hsl(", "")

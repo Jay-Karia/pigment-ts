@@ -1,7 +1,6 @@
 /**
  * Contains tests for lib functions.
  */
-
 import { detectFormat } from "../lib/detectFormat";
 
 describe("Detect color format", () => {

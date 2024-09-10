@@ -1,9 +1,11 @@
 /**
  * Contains tests for the basic functionality of the application.
  */
-
 import PigmentJS from "../index";
 
+/**
+ * Contains test for converting colors.
+ */
 describe("Color conversion", () => {
   const convertColor = PigmentJS.convertColor;
 
