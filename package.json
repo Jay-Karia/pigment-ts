@@ -9,7 +9,7 @@
     "build": "tsup",
     "lint": "npx eslint .",
     "format": "npx prettier . --write",
-    "test": "jest --verbose"
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",

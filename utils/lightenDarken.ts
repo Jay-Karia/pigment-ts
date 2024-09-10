@@ -1,3 +1,4 @@
+import { darkenHex } from "../lib/darkenHex";
 import { detectFormat } from "../lib/detectFormat";
 import { hslToHex } from "../lib/hslToHex";
 import { lightenHex } from "../lib/lightenHex";
@@ -52,5 +53,5 @@ export function darkenColor(color: string, percent: number) {
   if (format === "rgb") hexColor = rgbToHex(color);
   else if (format === "hsl") hexColor = hslToHex(color);
 
-  return lightenHex(hexColor, -percent, format);
+  return darkenHex(hexColor, percent, format);
 }

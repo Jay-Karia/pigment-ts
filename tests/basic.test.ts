@@ -236,84 +236,84 @@ describe("Lightening colors", () => {
 /**
  * Contains tests for darkening colors.
  */
-// describe("Darkening colors", () => {
-//   const darkenColor = PigmentJS.darkenColor;
+describe("Darkening colors", () => {
+  const darkenColor = PigmentJS.darkenColor;
 
-//   const darken20 = {
-//     // hex
-//     "#FF0000": "#CC0000",
-//     "#00FF00": "#00CC00",
-//     "#0000FF": "#0000CC",
-//     "#FFFFFF": "#E6E6E6",
-//     "#000000": "#000000",
-//     // rgb
-//     "rgb(255, 0, 0)": "rgb(204, 0, 0)",
-//     "rgb(0, 255, 0)": "rgb(0, 204, 0)",
-//     "rgb(0, 0, 255)": "rgb(0, 0, 204)",
-//     "rgb(255, 255, 255)": "rgb(230, 230, 230)",
-//     "rgb(0, 0, 0)": "rgb(0, 0, 0)",
-//     // hsl
-//     "hsl(0, 100%, 50%)": "hsl(0, 100%, 40%)",
-//     "hsl(120, 100%, 50%)": "hsl(120, 100%, 40%)",
-//     "hsl(240, 100%, 50%)": "hsl(240, 100%, 40%)",
-//     "hsl(0, 0%, 100%)": "hsl(0, 0%, 90%)",
-//     "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
-//   };
+  const darken20 = {
+    // hex
+    "#FF0000": "#CC0000",
+    "#00FF00": "#00CC00",
+    "#0000FF": "#0000CC",
+    "#FFFFFF": "#CCCCCC",
+    "#000000": "#000000",
+    // rgb
+    "rgb(255, 0, 0)": "rgb(204, 0, 0)",
+    "rgb(0, 255, 0)": "rgb(0, 204, 0)",
+    "rgb(0, 0, 255)": "rgb(0, 0, 204)",
+    "rgb(255, 255, 255)": "rgb(204, 204, 204)",
+    "rgb(0, 0, 0)": "rgb(0, 0, 0)",
+    // hsl
+    "hsl(0, 100%, 50%)": "hsl(0, 100%, 40%)",
+    "hsl(120, 100%, 50%)": "hsl(120, 100%, 40%)",
+    "hsl(240, 100%, 50%)": "hsl(240, 100%, 40%)",
+    "hsl(0, 0%, 100%)": "hsl(0, 0%, 80%)",
+    "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
+  };
 
-//   const darken50 = {
-//     // hex
-//     "#FF0000": "#800000",
-//     "#00FF00": "#008000",
-//     "#0000FF": "#000080",
-//     "#FFFFFF": "#808080",
-//     "#000000": "#000000",
-//     // rgb
-//     "rgb(255, 0, 0)": "rgb(128, 0, 0)",
-//     "rgb(0, 255, 0)": "rgb(0, 128, 0)",
-//     "rgb(0, 0, 255)": "rgb(0, 0, 128)",
-//     "rgb(255, 255, 255)": "rgb(128, 128, 128)",
-//     "rgb(0, 0, 0)": "rgb(0, 0, 0)",
-//     // hsl
-//     "hsl(0, 100%, 50%)": "hsl(0, 100%, 25%)",
-//     "hsl(120, 100%, 50%)": "hsl(120, 100%, 25%)",
-//     "hsl(240, 100%, 50%)": "hsl(240, 100%, 25%)",
-//     "hsl(0, 0%, 100%)": "hsl(0, 0%, 50%)",
-//     "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
-//   };
+  const darken50 = {
+    // hex
+    "#FF0000": "#800000",
+    "#00FF00": "#008000",
+    "#0000FF": "#000080",
+    "#FFFFFF": "#808080",
+    "#000000": "#000000",
+    // rgb
+    "rgb(255, 0, 0)": "rgb(128, 0, 0)",
+    "rgb(0, 255, 0)": "rgb(0, 128, 0)",
+    "rgb(0, 0, 255)": "rgb(0, 0, 128)",
+    "rgb(255, 255, 255)": "rgb(128, 128, 128)",
+    "rgb(0, 0, 0)": "rgb(0, 0, 0)",
+    // hsl
+    "hsl(0, 100%, 50%)": "hsl(0, 100%, 25%)",
+    "hsl(120, 100%, 50%)": "hsl(120, 100%, 25%)",
+    "hsl(240, 100%, 50%)": "hsl(240, 100%, 25%)",
+    "hsl(0, 0%, 100%)": "hsl(0, 0%, 50%)",
+    "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
+  };
 
-//   const darken80 = {
-//     // hex
-//     "#FF0000": "#330000",
-//     "#00FF00": "#003300",
-//     "#0000FF": "#000033",
-//     "#FFFFFF": "#4C4C4C",
-//     "#000000": "#000000",
-//     // rgb
-//     "rgb(255, 0, 0)": "rgb(51, 0, 0)",
-//     "rgb(0, 255, 0)": "rgb(0, 51, 0)",
-//     "rgb(0, 0, 255)": "rgb(0, 0, 51)",
-//     "rgb(255, 255, 255)": "rgb(76, 76, 76)",
-//     "rgb(0, 0, 0)": "rgb(0, 0, 0)",
-//     // hsl
-//     "hsl(0, 100%, 50%)": "hsl(0, 100%, 0%)",
-//     "hsl(120, 100%, 50%)": "hsl(120, 100%, 0%)",
-//     "hsl(240, 100%, 50%)": "hsl(240, 100%, 0%)",
-//     "hsl(0, 0%, 100%)": "hsl(0, 0%, 30%)",
-//     "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
-//   };
+  const darken80 = {
+    // hex
+    "#FF0000": "#330000",
+    "#00FF00": "#003300",
+    "#0000FF": "#000033",
+    "#FFFFFF": "#333333",
+    "#000000": "#000000",
+    // rgb
+    "rgb(255, 0, 0)": "rgb(51, 0, 0)",
+    "rgb(0, 255, 0)": "rgb(0, 51, 0)",
+    "rgb(0, 0, 255)": "rgb(0, 0, 51)",
+    "rgb(255, 255, 255)": "rgb(51, 51, 51)",
+    "rgb(0, 0, 0)": "rgb(0, 0, 0)",
+    // hsl
+    "hsl(0, 100%, 50%)": "hsl(0, 100%, 10%)",
+    "hsl(120, 100%, 50%)": "hsl(120, 100%, 10%)",
+    "hsl(240, 100%, 50%)": "hsl(240, 100%, 10%)",
+    "hsl(0, 0%, 100%)": "hsl(0, 0%, 20%)",
+    "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
+  };
 
-//   // darken by 20%
-//   it.each(Object.keys(darken20))("should darken %s by 20%", color => {
-//     expect(darkenColor(color, 20)).toBe(darken20[color]);
-//   });
+  // darken by 20%
+  it.each(Object.keys(darken20))("should darken %s by 20%", color => {
+    expect(darkenColor(color, 20)).toBe(darken20[color]);
+  });
 
-//   // darken by 50%
-//   it.each(Object.keys(darken50))("should darken %s by 50%", color => {
-//     expect(darkenColor(color, 50)).toBe(darken50[color]);
-//   });
+  // darken by 50%
+  it.each(Object.keys(darken50))("should darken %s by 50%", color => {
+    expect(darkenColor(color, 50)).toBe(darken50[color]);
+  });
 
-//   // darken by 80%
-//   it.each(Object.keys(darken80))("should darken %s by 80%", color => {
-//     expect(darkenColor(color, 80)).toBe(darken80[color]);
-//   });
-// });
+  // darken by 80%
+  it.each(Object.keys(darken80))("should darken %s by 80%", color => {
+    expect(darkenColor(color, 80)).toBe(darken80[color]);
+  });
+});
