@@ -12,7 +12,7 @@
     "noEmit": true,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src", "lib", "utils", "index.ts", "types"],
   "exclude": ["node_modules"],
   "typeAcquisition": {
     "include": ["jest"]

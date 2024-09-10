@@ -2,7 +2,7 @@
  * Contains tests for lib functions.
  */
 
-import { detectFormat } from "../src/lib/detectFormat";
+import { detectFormat } from "../lib/detectFormat";
 
 describe("Detect color format", () => {
   const tests = {

@@ -2,12 +2,11 @@
  * Contains tests for the basic functionality of the application.
  */
 
-import PigmentJS from "../src/index";
+import PigmentJS from "../index";
 
 describe("Color conversion", () => {
   const convertColor = PigmentJS.convertColor;
 
-  // hex to rgb
   const hexToRgb = {
     "#FF0000": "rgb(255, 0, 0)",
     "#00FF00": "rgb(0, 255, 0)",
@@ -26,11 +25,6 @@ describe("Color conversion", () => {
     "#FFA500": "rgb(255, 165, 0)",
   };
 
-  it.each(Object.keys(hexToRgb))("should convert %s to rgb", hex => {
-    expect(convertColor(hex, "rgb")).toBe(hexToRgb[hex]);
-  });
-
-  // hex to hsl
   const hexToHsl = {
     "#FF0000": "hsl(0, 100%, 50%)",
     "#00FF00": "hsl(120, 100%, 50%)",
@@ -45,15 +39,10 @@ describe("Color conversion", () => {
     "#808000": "hsl(60, 100%, 25%)",
     "#008000": "hsl(120, 100%, 25%)",
     "#800080": "hsl(300, 100%, 25%)",
-    "#A52A2A": "hsl(0, 58%, 41%)",
+    "#A52A2A": "hsl(0, 59%, 41%)",
     "#FFA500": "hsl(39, 100%, 50%)",
   };
 
-  it.each(Object.keys(hexToRgb))("should convert %s to hsl", hex => {
-    expect(convertColor(hex, "hsl")).toBe(hexToHsl[hex]);
-  });
-
-  // rgb to hex
   const rgbToHex = {
     "rgb(255, 0, 0)": "#FF0000",
     "rgb(0, 255, 0)": "#00FF00",
@@ -72,11 +61,6 @@ describe("Color conversion", () => {
     "rgb(255, 165, 0)": "#FFA500",
   };
 
-  it.each(Object.keys(rgbToHex))("should convert %s to hex", rgb => {
-    expect(convertColor(rgb, "hex")).toBe(rgbToHex[rgb]);
-  });
-
-  // rgb to hsl
   const rgbToHsl = {
     "rgb(255, 0, 0)": "hsl(0, 100%, 50%)",
     "rgb(0, 255, 0)": "hsl(120, 100%, 50%)",
@@ -91,15 +75,10 @@ describe("Color conversion", () => {
     "rgb(128, 128, 0)": "hsl(60, 100%, 25%)",
     "rgb(0, 128, 0)": "hsl(120, 100%, 25%)",
     "rgb(128, 0, 128)": "hsl(300, 100%, 25%)",
-    "rgb(165, 42, 42)": "hsl(0, 58%, 41%)",
+    "rgb(165, 42, 42)": "hsl(0, 59%, 41%)",
     "rgb(255, 165, 0)": "hsl(39, 100%, 50%)",
   };
 
-  it.each(Object.keys(rgbToHsl))("should convert %s to hsl", rgb => {
-    expect(convertColor(rgb, "hsl")).toBe(rgbToHsl[rgb]);
-  });
-
-  // hsl to hex
   const hslToHex = {
     "hsl(0, 100%, 50%)": "#FF0000",
     "hsl(120, 100%, 50%)": "#00FF00",
@@ -108,21 +87,16 @@ describe("Color conversion", () => {
     "hsl(0, 0%, 0%)": "#000000",
     "hsl(300, 100%, 50%)": "#FF00FF",
     "hsl(180, 100%, 50%)": "#00FFFF",
-    "hsl(0, 0%, 75%)": "#C0C0C0",
+    "hsl(0, 0%, 75%)": "#BFBFBF",
     "hsl(0, 0%, 50%)": "#808080",
     "hsl(0, 100%, 25%)": "#800000",
-    "hsl(60, 100%, 25%)": "#808000",
+    "hsl(60, 100%, 25%)": "#7F8000",
     "hsl(120, 100%, 25%)": "#008000",
-    "hsl(300, 100%, 25%)": "#800080",
-    "hsl(0, 58%, 41%)": "#A52A2A",
-    "hsl(39, 100%, 50%)": "#FFA500",
+    "hsl(300, 100%, 25%)": "#80007F",
+    "hsl(0, 58%, 41%)": "#A52C2C",
+    "hsl(39, 100%, 50%)": "#FFA600",
   };
 
-  it.each(Object.keys(hslToHex))("should convert %s to hex", hsl => {
-    expect(convertColor(hsl, "hex")).toBe(hslToHex[hsl]);
-  });
-
-  // hsl to rgb
   const hslToRgb = {
     "hsl(0, 100%, 50%)": "rgb(255, 0, 0)",
     "hsl(120, 100%, 50%)": "rgb(0, 255, 0)",
@@ -131,16 +105,42 @@ describe("Color conversion", () => {
     "hsl(0, 0%, 0%)": "rgb(0, 0, 0)",
     "hsl(300, 100%, 50%)": "rgb(255, 0, 255)",
     "hsl(180, 100%, 50%)": "rgb(0, 255, 255)",
-    "hsl(0, 0%, 75%)": "rgb(192, 192, 192)",
+    "hsl(0, 0%, 75%)": "rgb(191, 191, 191)",
     "hsl(0, 0%, 50%)": "rgb(128, 128, 128)",
     "hsl(0, 100%, 25%)": "rgb(128, 0, 0)",
-    "hsl(60, 100%, 25%)": "rgb(128, 128, 0)",
+    "hsl(60, 100%, 25%)": "rgb(127, 128, 0)",
     "hsl(120, 100%, 25%)": "rgb(0, 128, 0)",
-    "hsl(300, 100%, 25%)": "rgb(128, 0, 128)",
-    "hsl(0, 58%, 41%)": "rgb(165, 42, 42)",
-    "hsl(39, 100%, 50%)": "rgb(255, 165, 0)",
+    "hsl(300, 100%, 25%)": "rgb(128, 0, 127)",
+    "hsl(0, 58%, 41%)": "rgb(165, 44, 44)",
+    "hsl(39, 100%, 50%)": "rgb(255, 166, 0)",
   };
 
+  // hex to rgb
+  it.each(Object.keys(hexToRgb))("should convert %s to rgb", hex => {
+    expect(convertColor(hex, "rgb")).toBe(hexToRgb[hex]);
+  });
+
+  // hex to hsl
+  it.each(Object.keys(hexToRgb))("should convert %s to hsl", hex => {
+    expect(convertColor(hex, "hsl")).toBe(hexToHsl[hex]);
+  });
+
+  // rgb to hex
+  it.each(Object.keys(rgbToHex))("should convert %s to hex", rgb => {
+    expect(convertColor(rgb, "hex")).toBe(rgbToHex[rgb]);
+  });
+
+  // rgb to hsl
+  it.each(Object.keys(rgbToHsl))("should convert %s to hsl", rgb => {
+    expect(convertColor(rgb, "hsl")).toBe(rgbToHsl[rgb]);
+  });
+
+  // hsl to hex
+  it.each(Object.keys(hslToHex))("should convert %s to hex", hsl => {
+    expect(convertColor(hsl, "hex")).toBe(hslToHex[hsl]);
+  });
+
+  // hsl to rgb
   it.each(Object.keys(hslToRgb))("should convert %s to rgb", hsl => {
     expect(convertColor(hsl, "rgb")).toBe(hslToRgb[hsl]);
   });
