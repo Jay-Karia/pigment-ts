@@ -95,7 +95,7 @@ describe("Color conversion", () => {
     "hsl(60, 100%, 25%)": "#7F8000",
     "hsl(120, 100%, 25%)": "#008000",
     "hsl(300, 100%, 25%)": "#80007F",
-    "hsl(0, 58%, 41%)": "#A52C2C",
+    "hsl(0, 60%, 41%)": "#A72A2A",
     "hsl(39, 100%, 50%)": "#FFA600",
   };
 
@@ -113,7 +113,7 @@ describe("Color conversion", () => {
     "hsl(60, 100%, 25%)": "rgb(127, 128, 0)",
     "hsl(120, 100%, 25%)": "rgb(0, 128, 0)",
     "hsl(300, 100%, 25%)": "rgb(128, 0, 127)",
-    "hsl(0, 58%, 41%)": "rgb(165, 44, 44)",
+    "hsl(0, 60%, 41%)": "rgb(167, 42, 42)",
     "hsl(39, 100%, 50%)": "rgb(255, 166, 0)",
   };
 
@@ -147,3 +147,173 @@ describe("Color conversion", () => {
     expect(convertColor(hsl, "rgb")).toBe(hslToRgb[hsl]);
   });
 });
+
+/**
+ * Contains tests for lightening colors.
+ */
+describe("Lightening colors", () => {
+  const lightenColor = PigmentJS.lightenColor;
+
+  const lighten20 = {
+    // hex
+    "#FF0000": "#FF3333",
+    "#00FF00": "#33FF33",
+    "#0000FF": "#3333FF",
+    "#FFFFFF": "#FFFFFF",
+    "#000000": "#333333",
+    // rgb
+    "rgb(255, 0, 0)": "rgb(255, 51, 51)",
+    "rgb(0, 255, 0)": "rgb(51, 255, 51)",
+    "rgb(0, 0, 255)": "rgb(51, 51, 255)",
+    "rgb(255, 255, 255)": "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)": "rgb(51, 51, 51)",
+    // hsl
+    "hsl(0, 100%, 50%)": "hsl(0, 100%, 60%)",
+    "hsl(120, 100%, 50%)": "hsl(120, 100%, 60%)",
+    "hsl(240, 100%, 50%)": "hsl(240, 100%, 60%)",
+    "hsl(0, 0%, 100%)": "hsl(0, 0%, 100%)",
+    "hsl(0, 0%, 0%)": "hsl(0, 0%, 20%)",
+  };
+
+  const lighten50 = {
+    // hex
+    "#FF0000": "#FF7F7F",
+    "#00FF00": "#7FFF7F",
+    "#0000FF": "#7F7FFF",
+    "#FFFFFF": "#FFFFFF",
+    "#000000": "#7F7F7F",
+    // rgb
+    "rgb(255, 0, 0)": "rgb(255, 127, 127)",
+    "rgb(0, 255, 0)": "rgb(127, 255, 127)",
+    "rgb(0, 0, 255)": "rgb(127, 127, 255)",
+    "rgb(255, 255, 255)": "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)": "rgb(127, 127, 127)",
+    // hsl
+    "hsl(0, 100%, 50%)": "hsl(0, 100%, 75%)",
+    "hsl(120, 100%, 50%)": "hsl(120, 100%, 75%)",
+    "hsl(240, 100%, 50%)": "hsl(240, 100%, 75%)",
+    "hsl(0, 0%, 100%)": "hsl(0, 0%, 100%)",
+    "hsl(0, 0%, 0%)": "hsl(0, 0%, 50%)",
+  };
+
+  const lighten80 = {
+    // hex
+    "#FF0000": "#FFCCCC",
+    "#00FF00": "#CCFFCC",
+    "#0000FF": "#CCCCFF",
+    "#FFFFFF": "#FFFFFF",
+    "#000000": "#CCCCCC",
+    // rgb
+    "rgb(255, 0, 0)": "rgb(255, 204, 204)",
+    "rgb(0, 255, 0)": "rgb(204, 255, 204)",
+    "rgb(0, 0, 255)": "rgb(204, 204, 255)",
+    "rgb(255, 255, 255)": "rgb(255, 255, 255)",
+    "rgb(0, 0, 0)": "rgb(204, 204, 204)",
+    // hsl
+    "hsl(0, 100%, 50%)": "hsl(0, 100%, 90%)",
+    "hsl(120, 100%, 50%)": "hsl(120, 100%, 90%)",
+    "hsl(240, 100%, 50%)": "hsl(240, 100%, 90%)",
+    "hsl(0, 0%, 100%)": "hsl(0, 0%, 100%)",
+    "hsl(0, 0%, 0%)": "hsl(0, 0%, 80%)",
+  };
+
+  // lighten by 20%
+  it.each(Object.keys(lighten20))("should lighten %s by 20%", color => {
+    expect(lightenColor(color, 20)).toBe(lighten20[color]);
+  });
+
+  // lighten by 50%
+  it.each(Object.keys(lighten50))("should lighten %s by 50%", color => {
+    expect(lightenColor(color, 50)).toBe(lighten50[color]);
+  });
+
+  // lighten by 80%
+  it.each(Object.keys(lighten80))("should lighten %s by 80%", color => {
+    expect(lightenColor(color, 80)).toBe(lighten80[color]);
+  });
+});
+
+/**
+ * Contains tests for darkening colors.
+ */
+// describe("Darkening colors", () => {
+//   const darkenColor = PigmentJS.darkenColor;
+
+//   const darken20 = {
+//     // hex
+//     "#FF0000": "#CC0000",
+//     "#00FF00": "#00CC00",
+//     "#0000FF": "#0000CC",
+//     "#FFFFFF": "#E6E6E6",
+//     "#000000": "#000000",
+//     // rgb
+//     "rgb(255, 0, 0)": "rgb(204, 0, 0)",
+//     "rgb(0, 255, 0)": "rgb(0, 204, 0)",
+//     "rgb(0, 0, 255)": "rgb(0, 0, 204)",
+//     "rgb(255, 255, 255)": "rgb(230, 230, 230)",
+//     "rgb(0, 0, 0)": "rgb(0, 0, 0)",
+//     // hsl
+//     "hsl(0, 100%, 50%)": "hsl(0, 100%, 40%)",
+//     "hsl(120, 100%, 50%)": "hsl(120, 100%, 40%)",
+//     "hsl(240, 100%, 50%)": "hsl(240, 100%, 40%)",
+//     "hsl(0, 0%, 100%)": "hsl(0, 0%, 90%)",
+//     "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
+//   };
+
+//   const darken50 = {
+//     // hex
+//     "#FF0000": "#800000",
+//     "#00FF00": "#008000",
+//     "#0000FF": "#000080",
+//     "#FFFFFF": "#808080",
+//     "#000000": "#000000",
+//     // rgb
+//     "rgb(255, 0, 0)": "rgb(128, 0, 0)",
+//     "rgb(0, 255, 0)": "rgb(0, 128, 0)",
+//     "rgb(0, 0, 255)": "rgb(0, 0, 128)",
+//     "rgb(255, 255, 255)": "rgb(128, 128, 128)",
+//     "rgb(0, 0, 0)": "rgb(0, 0, 0)",
+//     // hsl
+//     "hsl(0, 100%, 50%)": "hsl(0, 100%, 25%)",
+//     "hsl(120, 100%, 50%)": "hsl(120, 100%, 25%)",
+//     "hsl(240, 100%, 50%)": "hsl(240, 100%, 25%)",
+//     "hsl(0, 0%, 100%)": "hsl(0, 0%, 50%)",
+//     "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
+//   };
+
+//   const darken80 = {
+//     // hex
+//     "#FF0000": "#330000",
+//     "#00FF00": "#003300",
+//     "#0000FF": "#000033",
+//     "#FFFFFF": "#4C4C4C",
+//     "#000000": "#000000",
+//     // rgb
+//     "rgb(255, 0, 0)": "rgb(51, 0, 0)",
+//     "rgb(0, 255, 0)": "rgb(0, 51, 0)",
+//     "rgb(0, 0, 255)": "rgb(0, 0, 51)",
+//     "rgb(255, 255, 255)": "rgb(76, 76, 76)",
+//     "rgb(0, 0, 0)": "rgb(0, 0, 0)",
+//     // hsl
+//     "hsl(0, 100%, 50%)": "hsl(0, 100%, 0%)",
+//     "hsl(120, 100%, 50%)": "hsl(120, 100%, 0%)",
+//     "hsl(240, 100%, 50%)": "hsl(240, 100%, 0%)",
+//     "hsl(0, 0%, 100%)": "hsl(0, 0%, 30%)",
+//     "hsl(0, 0%, 0%)": "hsl(0, 0%, 0%)",
+//   };
+
+//   // darken by 20%
+//   it.each(Object.keys(darken20))("should darken %s by 20%", color => {
+//     expect(darkenColor(color, 20)).toBe(darken20[color]);
+//   });
+
+//   // darken by 50%
+//   it.each(Object.keys(darken50))("should darken %s by 50%", color => {
+//     expect(darkenColor(color, 50)).toBe(darken50[color]);
+//   });
+
+//   // darken by 80%
+//   it.each(Object.keys(darken80))("should darken %s by 80%", color => {
+//     expect(darkenColor(color, 80)).toBe(darken80[color]);
+//   });
+// });

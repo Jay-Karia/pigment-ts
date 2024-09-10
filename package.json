@@ -8,8 +8,7 @@
   "scripts": {
     "build": "tsup",
     "lint": "npx eslint .",
-    "format": "npx prettier src/**/*.* --write",
-    "format:all": "npx prettier . --write",
+    "format": "npx prettier . --write",
     "test": "jest --verbose"
   },
   "repository": {
