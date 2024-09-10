@@ -19,7 +19,7 @@ export function convertColor(color: string, to: Format): string | null {
   }
 
   if (colorFormat === to) {
-    return color;
+    return color.toUpperCase();
   }
 
   // hex to rgb

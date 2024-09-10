@@ -27,7 +27,7 @@ console.log(lighter); // '#FF8A66'
 
 // Get Tailwind CSS class
 const twClass = toTailwind("#ef4444");
-console.log(twClass); // 'bg-red-500'
+console.log(twClass); // 'red-500'
 ```
 
 Use all functions via default import
