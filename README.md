@@ -23,7 +23,7 @@ console.log(rgb); // 'rgb(255, 87, 51)'
 
 // Lighten a color by 20%
 const lighter = lightenColor("#ff5733", 20);
-console.log(lighter); // '#ff8566'
+console.log(lighter); // '#FF8A66'
 ```
 
 Use all functions via default import
@@ -32,5 +32,5 @@ Use all functions via default import
 import PigmentJS from "pigment-js";
 
 const randomHex = PigmentJS.randomColor("hex");
-console.log(randomHex); // '#a1b2c3'
+console.log(randomHex); // '#A1B2C3'
 ```

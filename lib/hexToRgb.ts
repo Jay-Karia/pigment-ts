@@ -10,15 +10,9 @@ export function hexToRgb(hexColor: string): string {
   let g = 0;
   let b = 0;
 
-  if (hex.length === 3) {
-    r = parseInt(hex[0] + hex[0], 16);
-    g = parseInt(hex[1] + hex[1], 16);
-    b = parseInt(hex[2] + hex[2], 16);
-  } else {
-    r = parseInt(hex[0] + hex[1], 16);
-    g = parseInt(hex[2] + hex[3], 16);
-    b = parseInt(hex[4] + hex[5], 16);
-  }
+  r = parseInt(hex[0] + hex[1], 16);
+  g = parseInt(hex[2] + hex[3], 16);
+  b = parseInt(hex[4] + hex[5], 16);
 
   return `rgb(${r}, ${g}, ${b})`;
 }

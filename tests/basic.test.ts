@@ -317,3 +317,25 @@ describe("Darkening colors", () => {
     expect(darkenColor(color, 80)).toBe(darken80[color]);
   });
 });
+
+/**
+ * Contains tests for generating random colors.
+ */
+describe("Random colors", () => {
+  const randomColor = PigmentJS.randomColor;
+
+  // random hex
+  it("should generate a random hex color", () => {
+    expect(randomColor("hex")).toMatch(/^#[0-9A-F]{6}$/);
+  });
+
+  // random rgb
+  it("should generate a random rgb color", () => {
+    expect(randomColor("rgb")).toMatch(/^rgb\(\d{1,3}, \d{1,3}, \d{1,3}\)$/);
+  });
+
+  // random hsl
+  it("should generate a random hsl color", () => {
+    expect(randomColor("hsl")).toMatch(/^hsl\(\d{1,3}, \d{1,3}%, \d{1,3}%\)$/);
+  });
+});
