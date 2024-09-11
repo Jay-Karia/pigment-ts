@@ -16,6 +16,7 @@ export function lightenHex(hexColor: string, percent: number, format: Format) {
     .replace(/[^\d,]/g, "")
     .split(",")
     .map(Number);
+
   const r = Math.min(255, rgbColor[0] + amt);
   const g = Math.min(255, rgbColor[1] + amt);
   const b = Math.min(255, rgbColor[2] + amt);

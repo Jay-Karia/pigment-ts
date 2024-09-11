@@ -14,18 +14,9 @@ import { darkenTw, lightenTw } from "../lib/lightenDarkenTw";
 export function lightenColor(color: string, percent: number) {
   const format = detectFormat(color);
 
-  if (!format) {
-    throw new Error("Invalid color format");
-  }
-
-  if (percent < 0 || percent > 100) {
-    throw new Error("Invalid percentage");
-  }
-
-  if (percent == 0) {
-    return color;
-  }
-
+  if (!format) throw new Error("Invalid color format");
+  if (percent < 0 || percent > 100) throw new Error("Invalid percentage");
+  if (percent == 0) return color;
   if (format === "tw") return lightenTw(color, percent);
 
   let hexColor = color;
@@ -45,11 +36,8 @@ export function darkenColor(color: string, percent: number) {
   const format = detectFormat(color);
 
   if (!format) throw new Error("Invalid color format");
-
   if (percent < 0 || percent > 100) throw new Error("Invalid percentage");
-
   if (percent == 0) return color;
-
   if (format === "tw") return darkenTw(color, percent);
 
   let hexColor = color;

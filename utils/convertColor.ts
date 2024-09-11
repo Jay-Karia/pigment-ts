@@ -8,7 +8,7 @@ import { toTailwind } from "./toTailwind";
 import { fromTailwind } from "../lib/fromTailwind";
 
 /**
- * Convert a color from one format to another
+ * Converts a color from one format to another
  * @param color The color to convert
  * @param to The format to convert to
  * @param twPrefix The tailwind prefix to use
@@ -21,48 +21,17 @@ export function convertColor(
 ): string | null {
   const colorFormat = detectFormat(color);
 
-  if (!colorFormat) {
-    throw new Error("Invalid color format.");
-  }
+  if (!colorFormat) throw new Error("Invalid color format.");
+  if (colorFormat === to) return color.toUpperCase();
 
-  if (colorFormat === to) {
-    return color.toUpperCase();
-  }
-
-  // hex to rgb
-  if (colorFormat === "hex" && to === "rgb") {
-    return hexToRgb(color);
-  }
-  // hex to hsl
-  if (colorFormat === "hex" && to === "hsl") {
-    const rgbColor = hexToRgb(color);
-    return rgbToHsl(rgbColor);
-  }
-  // rgb to hex
-  if (colorFormat === "rgb" && to === "hex") {
-    return rgbToHex(color);
-  }
-  // rgb to hsl
-  if (colorFormat === "rgb" && to === "hsl") {
-    return rgbToHsl(color);
-  }
-  // hsl to hex
-  if (colorFormat === "hsl" && to === "hex") {
-    return hslToHex(color);
-  }
-  // hsl to rgb
-  if (colorFormat === "hsl" && to === "rgb") {
-    const hexColor = hslToHex(color);
-    return hexToRgb(hexColor);
-  }
-  // rgb | hex | hsl to tw
-  if (to === "tw") {
-    return toTailwind(color, twPrefix);
-  }
-  // tw to rgb | hex | hsl
-  if (colorFormat === "tw") {
-    return fromTailwind(color, to);
-  }
+  if (colorFormat === "hex" && to === "rgb") return hexToRgb(color); // hex to rgb
+  if (colorFormat === "hex" && to === "hsl") return rgbToHsl(hexToRgb(color)); // hex to rgb to hsl
+  if (colorFormat === "rgb" && to === "hex") return rgbToHex(color); // rgb to hex
+  if (colorFormat === "rgb" && to === "hsl") return rgbToHsl(color); // rgb to hsl
+  if (colorFormat === "hsl" && to === "hex") return hslToHex(color); // hsl to hex
+  if (colorFormat === "hsl" && to === "rgb") return hexToRgb(hslToHex(color)); // hsl to rgb
+  if (to === "tw") return toTailwind(color, twPrefix); // rgb | hex | hsl to tw
+  if (colorFormat === "tw") return fromTailwind(color, to); // tw to rgb | hex | hsl
 
   return null;
 }

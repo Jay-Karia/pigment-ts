@@ -4,7 +4,7 @@ import { rgbToHex } from "./rgbToHex";
 import { rgbToHsl } from "./rgbToHsl";
 
 /**
- * Darkens a color by a percentage
+ * Darkens a hex color by a percentage
  * @param hexColor The color to darken
  * @param percent The percentage to darken the color by
  * @param format The output format

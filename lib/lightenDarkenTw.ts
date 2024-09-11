@@ -16,10 +16,10 @@ export function lightenTw(twColor: string, amount: number): string {
   if (!format) throw new Error("Invalid color format");
 
   const prefix = extractPrefix(twColor);
-  const color = removeTailwindPrefix(twColor);
+  const colorAndShade = removeTailwindPrefix(twColor);
 
-  const baseColor = extract(color).color;
-  const originalShade = extract(color).shade;
+  const baseColor = extract(colorAndShade).color;
+  const originalShade = extract(colorAndShade).shade;
 
   const modifiedShade = calcAmount(amount, true, originalShade);
 
@@ -40,10 +40,10 @@ export function darkenTw(twColor: string, amount: number): string {
   if (!format) throw new Error("Invalid color format");
 
   const prefix = extractPrefix(twColor);
-  const color = removeTailwindPrefix(twColor);
+  const colorAndShade = removeTailwindPrefix(twColor);
 
-  const baseColor = extract(color).color;
-  const originalShade = extract(color).shade;
+  const baseColor = extract(colorAndShade).color;
+  const originalShade = extract(colorAndShade).shade;
 
   const modifiedShade = calcAmount(amount, false, originalShade);
 
@@ -88,7 +88,7 @@ function extractPrefix(twColor: string): string {
 }
 
 /**
- *
+ * Extract the shade and color from a tailwind color
  */
 function extract(twColor: string): { shade: number; color: string } {
   const shade = parseInt(twColor.split("-")[1]);

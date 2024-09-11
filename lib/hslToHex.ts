@@ -1,15 +1,24 @@
 /**
  * Converts a number to hex
- * @param n The number to convert to hex
- * @returns The hex value of the number
  */
 function toHex(n: number): string {
   let hex = n.toString(16);
-  while (hex.length < 2) {
+  while (hex.length < 2)
     hex = "0" + hex;
-  }
   return hex;
 }
+
+/**
+ * Converts a hue to rgb
+ */
+function hue2rgb (p: number, q: number, t: number) {
+  if (t < 0) t += 1;
+  if (t > 1) t -= 1;
+  if (t < 1 / 6) return p + (q - p) * 6 * t;
+  if (t < 1 / 2) return q;
+  if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+  return p;
+};
 
 /**
  * Converts an hsl color to a hex color
@@ -35,15 +44,6 @@ export function hslToHex(hslColor: string): string {
   if (s === 0) {
     r = g = b = l;
   } else {
-    const hue2rgb = (p: number, q: number, t: number) => {
-      if (t < 0) t += 1;
-      if (t > 1) t -= 1;
-      if (t < 1 / 6) return p + (q - p) * 6 * t;
-      if (t < 1 / 2) return q;
-      if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
-      return p;
-    };
-
     const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
     const p = 2 * l - q;
 

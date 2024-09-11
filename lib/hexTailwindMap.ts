@@ -1,3 +1,4 @@
+// The mapping of hex colors to tailwind colors
 export const hexTailwindMap: Record<string, string> = {
   "#000000": "black",
   "#FFFFFF": "white",
@@ -267,6 +268,7 @@ export const hexTailwindMap: Record<string, string> = {
   "#4C0519": "rose-950",
 };
 
+// The inverted mapping of tailwind colors to hex colors
 export const hexTailwindMapInverted: Record<string, string> =
   Object.fromEntries(
     Object.entries(hexTailwindMap).map(([key, value]) => [value, key])
