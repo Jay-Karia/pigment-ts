@@ -4,6 +4,7 @@ import { hexToRgb } from "../lib/hexToRgb";
 import { rgbToHsl } from "../lib/rgbToHsl";
 import { hslToHex } from "../lib/hslToHex";
 import { rgbToHex } from "../lib/rgbToHex";
+import { toTailwind } from "./toTailwind";
 
 /**
  * Convert a color from one format to another
@@ -11,7 +12,11 @@ import { rgbToHex } from "../lib/rgbToHex";
  * @param to The format to convert to
  * @returns The converted color
  */
-export function convertColor(color: string, to: Format): string | null {
+export function convertColor(
+  color: string,
+  to: Format,
+  twPrefix?: string
+): string | null {
   const colorFormat = detectFormat(color);
 
   if (!colorFormat) {
@@ -47,6 +52,10 @@ export function convertColor(color: string, to: Format): string | null {
   if (colorFormat === "hsl" && to === "rgb") {
     const hexColor = hslToHex(color);
     return hexToRgb(hexColor);
+  }
+  // rgb | hex | hsl to tw
+  if (to === "tw") {
+    return toTailwind(color, twPrefix);
   }
 
   return null;

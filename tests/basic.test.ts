@@ -118,33 +118,45 @@ describe("Color conversion", () => {
   };
 
   // hex to rgb
-  it.each(Object.keys(hexToRgb))("should convert %s to rgb", hex => {
-    expect(convertColor(hex, "rgb")).toBe(hexToRgb[hex]);
+  describe("HEX to RGB", () => {
+    it.each(Object.keys(hexToRgb))("should convert %s to rgb", hex => {
+      expect(convertColor(hex, "rgb")).toBe(hexToRgb[hex]);
+    });
   });
 
   // hex to hsl
-  it.each(Object.keys(hexToRgb))("should convert %s to hsl", hex => {
-    expect(convertColor(hex, "hsl")).toBe(hexToHsl[hex]);
+  describe("HEX to HSL", () => {
+    it.each(Object.keys(hexToRgb))("should convert %s to hsl", hex => {
+      expect(convertColor(hex, "hsl")).toBe(hexToHsl[hex]);
+    });
   });
 
   // rgb to hex
-  it.each(Object.keys(rgbToHex))("should convert %s to hex", rgb => {
-    expect(convertColor(rgb, "hex")).toBe(rgbToHex[rgb]);
+  describe("RGB to HEX", () => {
+    it.each(Object.keys(rgbToHex))("should convert %s to hex", rgb => {
+      expect(convertColor(rgb, "hex")).toBe(rgbToHex[rgb]);
+    });
   });
 
   // rgb to hsl
-  it.each(Object.keys(rgbToHsl))("should convert %s to hsl", rgb => {
-    expect(convertColor(rgb, "hsl")).toBe(rgbToHsl[rgb]);
+  describe("RGB to HSL", () => {
+    it.each(Object.keys(rgbToHsl))("should convert %s to hsl", rgb => {
+      expect(convertColor(rgb, "hsl")).toBe(rgbToHsl[rgb]);
+    });
   });
 
   // hsl to hex
-  it.each(Object.keys(hslToHex))("should convert %s to hex", hsl => {
-    expect(convertColor(hsl, "hex")).toBe(hslToHex[hsl]);
+  describe("HSL to HEX", () => {
+    it.each(Object.keys(hslToHex))("should convert %s to hex", hsl => {
+      expect(convertColor(hsl, "hex")).toBe(hslToHex[hsl]);
+    });
   });
 
   // hsl to rgb
-  it.each(Object.keys(hslToRgb))("should convert %s to rgb", hsl => {
-    expect(convertColor(hsl, "rgb")).toBe(hslToRgb[hsl]);
+  describe("HSL to RGB", () => {
+    it.each(Object.keys(hslToRgb))("should convert %s to rgb", hsl => {
+      expect(convertColor(hsl, "rgb")).toBe(hslToRgb[hsl]);
+    });
   });
 });
 
@@ -218,18 +230,24 @@ describe("Lightening colors", () => {
   };
 
   // lighten by 20%
-  it.each(Object.keys(lighten20))("should lighten %s by 20%", color => {
-    expect(lightenColor(color, 20)).toBe(lighten20[color]);
+  describe("Lighten by 20%", () => {
+    it.each(Object.keys(lighten20))("should lighten %s by 20%", color => {
+      expect(lightenColor(color, 20)).toBe(lighten20[color]);
+    });
   });
 
   // lighten by 50%
-  it.each(Object.keys(lighten50))("should lighten %s by 50%", color => {
-    expect(lightenColor(color, 50)).toBe(lighten50[color]);
+  describe("Lighten by 50%", () => {
+    it.each(Object.keys(lighten50))("should lighten %s by 50%", color => {
+      expect(lightenColor(color, 50)).toBe(lighten50[color]);
+    });
   });
 
   // lighten by 80%
-  it.each(Object.keys(lighten80))("should lighten %s by 80%", color => {
-    expect(lightenColor(color, 80)).toBe(lighten80[color]);
+  describe("Lighten by 80%", () => {
+    it.each(Object.keys(lighten80))("should lighten %s by 80%", color => {
+      expect(lightenColor(color, 80)).toBe(lighten80[color]);
+    });
   });
 });
 
@@ -303,18 +321,24 @@ describe("Darkening colors", () => {
   };
 
   // darken by 20%
-  it.each(Object.keys(darken20))("should darken %s by 20%", color => {
-    expect(darkenColor(color, 20)).toBe(darken20[color]);
+  describe("Darken by 20%", () => {
+    it.each(Object.keys(darken20))("should darken %s by 20%", color => {
+      expect(darkenColor(color, 20)).toBe(darken20[color]);
+    });
   });
 
   // darken by 50%
-  it.each(Object.keys(darken50))("should darken %s by 50%", color => {
-    expect(darkenColor(color, 50)).toBe(darken50[color]);
+  describe("Darken by 50%", () => {
+    it.each(Object.keys(darken50))("should darken %s by 50%", color => {
+      expect(darkenColor(color, 50)).toBe(darken50[color]);
+    });
   });
 
   // darken by 80%
-  it.each(Object.keys(darken80))("should darken %s by 80%", color => {
-    expect(darkenColor(color, 80)).toBe(darken80[color]);
+  describe("Darken by 80%", () => {
+    it.each(Object.keys(darken80))("should darken %s by 80%", color => {
+      expect(darkenColor(color, 80)).toBe(darken80[color]);
+    });
   });
 });
 
@@ -325,17 +349,25 @@ describe("Random colors", () => {
   const randomColor = PigmentJS.randomColor;
 
   // random hex
-  it("should generate a random hex color", () => {
-    expect(randomColor("hex")).toMatch(/^#[0-9A-F]{6}$/);
+  describe("Random HEX", () => {
+    it("should generate a random hex color", () => {
+      expect(randomColor("hex")).toMatch(/^#[0-9A-F]{6}$/);
+    });
   });
 
   // random rgb
-  it("should generate a random rgb color", () => {
-    expect(randomColor("rgb")).toMatch(/^rgb\(\d{1,3}, \d{1,3}, \d{1,3}\)$/);
+  describe("Random RGB", () => {
+    it("should generate a random rgb color", () => {
+      expect(randomColor("rgb")).toMatch(/^rgb\(\d{1,3}, \d{1,3}, \d{1,3}\)$/);
+    });
   });
 
   // random hsl
-  it("should generate a random hsl color", () => {
-    expect(randomColor("hsl")).toMatch(/^hsl\(\d{1,3}, \d{1,3}%, \d{1,3}%\)$/);
+  describe("Random HSL", () => {
+    it("should generate a random hsl color", () => {
+      expect(randomColor("hsl")).toMatch(
+        /^hsl\(\d{1,3}, \d{1,3}%, \d{1,3}%\)$/
+      );
+    });
   });
 });

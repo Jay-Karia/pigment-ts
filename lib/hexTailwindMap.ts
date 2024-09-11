@@ -266,3 +266,8 @@ export const hexTailwindMap: Record<string, string> = {
   "#881337": "rose-900",
   "#4C0519": "rose-950",
 };
+
+export const hexTailwindMapInverted: Record<string, string> =
+  Object.fromEntries(
+    Object.entries(hexTailwindMap).map(([key, value]) => [value, key])
+  );

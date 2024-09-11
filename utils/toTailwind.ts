@@ -9,16 +9,24 @@ import { rgbToHex } from "../lib/rgbToHex";
  * @param prefix The prefix to add to the tailwind color
  * @returns The tailwind equivalent of the color
  */
-export function toTailwind(color: string, prefix?: string): string {
+export function toTailwind(
+  color: string,
+  prefix?: string,
+  map: Record<string, string> = hexTailwindMap
+): string {
   const format = detectFormat(color);
-  let hexColor = "";
+  let hexColor = color;
 
   if (format === "rgb") hexColor = rgbToHex(color);
   else if (format === "hsl") hexColor = hslToHex(color);
-  else hexColor = color.toUpperCase();
+  else if (format === "hex") hexColor = color.toUpperCase();
+  else if (format === "tw" || color == "black" || color == "white")
+    return color;
 
-  let tailwindEquivalent = hexTailwindMap[hexColor];
-  if (tailwindEquivalent === undefined) tailwindEquivalent = `[${hexColor}]`;
+  let tailwindEquivalent = map[hexColor];
+  if (tailwindEquivalent === undefined && !color.includes("-"))
+    tailwindEquivalent = `[${hexColor}]`;
+  else if (tailwindEquivalent === undefined) tailwindEquivalent = color;
 
   return prefix ? `${prefix}-${tailwindEquivalent}` : tailwindEquivalent;
 }
