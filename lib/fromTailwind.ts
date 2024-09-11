@@ -2,27 +2,15 @@ import { Format } from "../types/format";
 import { hexTailwindMapInverted } from "./hexTailwindMap";
 import { hexToRgb } from "./hexToRgb";
 import { rgbToHsl } from "./rgbToHsl";
+import { TAILWIND_PREFIXES } from "../constants/index";
 
 /**
  * Removes the tailwind prefix from a color
  * @param twColor The tailwind color to be manipulated
  * @returns The tailwind color without the prefix
  */
-function removeTailwindPrefix(twColor: string) {
-  const prefixes = [
-    "bg-",
-    "text-",
-    "border-",
-    "ring-",
-    "from-",
-    "via-",
-    "to-",
-    "divide-",
-    "placeholder-",
-    "ring-offset-",
-  ];
-
-  for (const prefix of prefixes) {
+export function removeTailwindPrefix(twColor: string) {
+  for (const prefix of TAILWIND_PREFIXES) {
     if (twColor.startsWith(prefix)) {
       return twColor.slice(prefix.length);
     }
