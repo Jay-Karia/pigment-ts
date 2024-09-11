@@ -1,13 +1,13 @@
 /**
  * Contains tests for the tailwind utility functions
  */
-import PigmentJS from "../index";
+import PigmentTS from "../index";
 
 /**
  * Contains tests for converting colors to tailwind classes
  */
 describe("Tailwind color conversion", () => {
-  const { toTailwind, convertColor } = PigmentJS;
+  const { toTailwind, convertColor } = PigmentTS;
 
   const hexToTailwind = {
     "#000000": "black",
@@ -233,7 +233,7 @@ describe("Tailwind color conversion", () => {
  * Contains tests for lightening and darkening tailwind colors
  */
 describe("Lighten and darken tailwind colors", () => {
-  const { lightenColor, darkenColor } = PigmentJS;
+  const { lightenColor, darkenColor } = PigmentTS;
 
   const lighten20 = {
     "gray-900": "gray-700",
@@ -348,7 +348,7 @@ describe("Lighten and darken tailwind colors", () => {
  * Contains tests for generating random tailwind colors
  */
 describe("Random tailwind colors", () => {
-  const { randomColor } = PigmentJS;
+  const { randomColor } = PigmentTS;
 
   // random colors
   describe("Random colors", () => {

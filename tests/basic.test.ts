@@ -1,13 +1,13 @@
 /**
  * Contains tests for the basic functionality of the application.
  */
-import PigmentJS from "../index";
+import PigmentTS from "../index";
 
 /**
  * Contains test for converting colors.
  */
 describe("Color conversion", () => {
-  const convertColor = PigmentJS.convertColor;
+  const convertColor = PigmentTS.convertColor;
 
   const hexToRgb = {
     "#FF0000": "rgb(255, 0, 0)",
@@ -164,7 +164,7 @@ describe("Color conversion", () => {
  * Contains tests for lightening colors.
  */
 describe("Lightening colors", () => {
-  const lightenColor = PigmentJS.lightenColor;
+  const lightenColor = PigmentTS.lightenColor;
 
   const lighten20 = {
     // hex
@@ -255,7 +255,7 @@ describe("Lightening colors", () => {
  * Contains tests for darkening colors.
  */
 describe("Darkening colors", () => {
-  const darkenColor = PigmentJS.darkenColor;
+  const darkenColor = PigmentTS.darkenColor;
 
   const darken20 = {
     // hex
@@ -346,7 +346,7 @@ describe("Darkening colors", () => {
  * Contains tests for generating random colors.
  */
 describe("Random colors", () => {
-  const randomColor = PigmentJS.randomColor;
+  const randomColor = PigmentTS.randomColor;
 
   // random hex
   describe("Random HEX", () => {

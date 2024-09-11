@@ -5,7 +5,7 @@ import { toTailwind } from "./utils/toTailwind";
 
 export { convertColor, lightenColor, darkenColor, randomColor, toTailwind };
 
-const PigmentJS = {
+const PigmentTS = {
   convertColor,
   lightenColor,
   darkenColor,
@@ -13,4 +13,4 @@ const PigmentJS = {
   toTailwind,
 };
 
-export default PigmentJS;
+export default PigmentTS;

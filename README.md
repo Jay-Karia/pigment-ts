@@ -1,4 +1,4 @@
-# 🎨 PigmentJS
+# 🎨 PigmentTS
 
 A lightweight JavaScript utility for seamless color manipulation and conversion between HEX, RGB, and HSL formats. Tailwind CSS support is built-in.
 
@@ -16,10 +16,10 @@ More features coming soon!
 
 ### 🚀 Getting Started
 
-**Installation:** Install PigmentJS via npm
+**Installation:** Install PigmentTS via npm
 
 ```shell
-npm install pigment-js
+npm install pigment-ts
 ```
 
 **Usage**
@@ -27,7 +27,7 @@ npm install pigment-js
 Import all the function you need
 
 ```ts
-import { convertColor, lightenColor, toTailwind } from "pigment-js";
+import { convertColor, lightenColor, toTailwind } from "pigment-ts";
 
 // Convert HEX to RGB
 const rgb = convertColor("#ff5733", "rgb");
@@ -45,9 +45,9 @@ console.log(twClass); // 'red-500'
 Use all functions via default import
 
 ```ts
-import PigmentJS from "pigment-js";
+import PigmentTS from "pigment-ts";
 
-const randomHex = PigmentJS.randomColor("hex");
+const randomHex = PigmentTS.randomColor("hex");
 console.log(randomHex); // '#A1B2C3'
 ```
 
@@ -62,7 +62,6 @@ Converts a color from one format to another. Supported formats are HEX, RGB, HSL
 ```ts
 convertColor(color: string, format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string
 ```
-
 
 ```ts
 convertColor("#ff5733", "rgb"); // 'rgb(255, 87, 51)'
@@ -130,7 +129,7 @@ toTailwind("#ef4444", "border"); // 'border-red-500'
 **Clone the repository**
 
 ```shell
-git clone https://github.com/Jay-Karia/pigment-js
+git clone https://github.com/Jay-Karia/pigment-ts
 ```
 
 **Install dependencies**
@@ -151,6 +150,6 @@ Open `node` in terminal and import the module
 
 ```shell
 node
-> const PigmentJS = require('./dist/index.js');
-> PigmentJS.randomColor("hex");
+> const PigmentTS = require('./dist/index.js');
+> PigmentTS.randomColor("hex");
 ```
