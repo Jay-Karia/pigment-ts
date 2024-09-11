@@ -6,6 +6,7 @@ export function hslToHsla(hslColor: string): string {
   const hsl = hslColor
     .replace("hsl(", "")
     .replace(")", "")
+    .replaceAll("%", "")
     .split(",")
     .map(Number);
 
@@ -13,26 +14,23 @@ export function hslToHsla(hslColor: string): string {
 }
 
 export function hslaToHsl(hslaColor: string): string {
-  const hsla = hslaColor
-    .replace("hsla(", "")
-    .replace(")", "")
-    .split(",")
-    .map(Number);
-
-  return `hsl(${hsla[0]}, ${hsla[1]}%, ${hsla[2]}%)`;
+  return (
+    hslaColor.replace("hsla", "hsl").split(",").slice(0, 3).join(",") + ")"
+  );
 }
 
 export function hslaToRgba(hslaColor: string): string {
   const hsla = hslaColor
     .replace("hsla(", "")
     .replace(")", "")
+    .replaceAll("%", "")
     .split(",")
     .map(Number);
 
   const a = hsla[3];
 
-  const hsl = `hsl(${hsla[0] * 360}, ${hsla[1] * 100}%, ${hsla[2] * 100}%)`;
-  const rgb = hexToRgb(hslToHex(hsl));
+  const hsl = `hsl(${hsla[0]}, ${hsla[1]}%, ${hsla[2]}%)`;
+  const rgb = hexToRgb(hslToHex(hsl)).replace("rgb(", "").replace(")", "");
 
   return `rgba(${rgb}, ${a})`;
 }
@@ -53,14 +51,11 @@ export function rgbaToHsla(rgbaColor: string): string {
 }
 
 export function rgbaToRgb(rgbaColor: string) {
-  return rgbaColor
-    .replace("rgba(", "")
-    .replace(")", "")
-    .split(",")
-    .slice(0, 3)
-    .join(", ");
+  return (
+    rgbaColor.replace("rgba", "rgb").split(",").slice(0, 3).join(",") + ")"
+  );
 }
 
 export function rgbToRgba(rgbColor: string): string {
-  return `rgba(${rgbColor}, 1)`;
+  return `rgba(${rgbColor.replace("rgb(", "").replace(")", "")}, 1)`;
 }
