@@ -55,9 +55,14 @@ console.log(randomHex); // '#A1B2C3'
 
 ### 📚 API Reference
 
-**convertColor(color: string, format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string**
+**convertColor**
 
 Converts a color from one format to another. Supported formats are HEX, RGB, HSL, and Tailwind CSS.
+
+```ts
+convertColor(color: string, format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string
+```
+
 
 ```ts
 convertColor("#ff5733", "rgb"); // 'rgb(255, 87, 51)'
@@ -66,25 +71,37 @@ convertColor("#7f1d1d", "tw"); // 'red-900'
 convertColor("#7f1d1d", "tw", "bg"); // 'bg-red-900'
 ```
 
-**lightenColor(color: string, percent: number): string**
+**lightenColor**
 
 Lightens a color by a specified percentage.
+
+```ts
+lightenColor(color: string, percent: number): string
+```
 
 ```ts
 lightenColor("#ff5733", 20); // '#FF8A66'
 ```
 
-**darkenColor(color: string, percent: number): string**
+**darkenColor**
 
 Darkens a color by a specified percentage.
+
+```ts
+darkenColor(color: string, percent: number): string
+```
 
 ```ts
 darkenColor("#ff5733", 20); // '#CC2400'
 ```
 
-**randomColor(format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string**
+**randomColor**
 
 Generates a random color in the specified format.
+
+```ts
+randomColor(format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string
+```
 
 ```ts
 randomColor("hex"); // '#A1B2C3'
@@ -93,9 +110,13 @@ randomColor("hsl"); // 'hsl(210, 26%, 70%)'
 randomColor("tw", "bg"); // 'bg-blue-300'
 ```
 
-**toTailwind(color: string, prefix?: string): string**
+**toTailwind**
 
 Converts a color to a Tailwind CSS class.
+
+```ts
+toTailwind(color: string, prefix?: string): string
+```
 
 ```ts
 toTailwind("#ef4444"); // 'red-500'
