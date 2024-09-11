@@ -1,1 +1,1 @@
-export type Format = "hex" | "rgb" | "hsl" | "tw";
+export type Format = "hex" | "rgb" | "hsl" | "tw" | "rgba" | "hsla";

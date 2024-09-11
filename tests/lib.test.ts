@@ -29,6 +29,18 @@ describe("Detect color format", () => {
     "bg-gray-300": "tw",
     "border-red-400": "tw",
     "text-green-500": "tw",
+    // valid rgba
+    "rgba(255, 255, 255, 0.5)": "rgba",
+    "rgba(192, 192, 192, 0.5)": "rgba",
+    "rgba(128, 0, 0, 0.5)": "rgba",
+    "rgba(0, 128, 0, 0.5)": "rgba",
+    "rgba(255, 165, 0, 0.5)": "rgba",
+    // valid hsla
+    "hsla(0, 0%, 100%, 0.5)": "hsla",
+    "hsla(120, 0%, 50%, 0.5)": "hsla",
+    "hsla(180, 100%, 50%, 0.5)": "hsla",
+    "hsla(60, 100%, 25%, 0.5)": "hsla",
+    "hsla(0, 58%, 41%, 0.5)": "hsla",
     // invalid
     "": null,
     random_val: null,
