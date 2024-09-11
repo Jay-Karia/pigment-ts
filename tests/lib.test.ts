@@ -23,6 +23,12 @@ describe("Detect color format", () => {
     "hsl(180, 100%, 50%)": "hsl",
     "hsl(60, 100%, 25%)": "hsl",
     "hsl(0, 58%, 41%)": "hsl",
+    // valid tailwind
+    "red-500": "tw",
+    "gray-200": "tw",
+    "bg-gray-300": "tw",
+    "border-red-400": "tw",
+    "text-green-500": "tw",
     // invalid
     "": null,
     random_val: null,

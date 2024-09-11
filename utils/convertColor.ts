@@ -11,6 +11,7 @@ import { fromTailwind } from "../lib/fromTailwind";
  * Convert a color from one format to another
  * @param color The color to convert
  * @param to The format to convert to
+ * @param twPrefix The tailwind prefix to use
  * @returns The converted color
  */
 export function convertColor(

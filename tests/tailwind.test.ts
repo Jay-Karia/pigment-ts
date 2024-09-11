@@ -228,3 +228,134 @@ describe("Tailwind color conversion", () => {
     );
   });
 });
+
+/**
+ * Contains tests for lightening and darkening tailwind colors
+ */
+// describe("Lighten and darken tailwind colors", () => {
+//   const { lightenTw, darkenTw } = PigmentJS;
+
+//   const lighten20 = {
+//     "gray-900": "gray-800",
+//     "red-500": "red-400",
+//     "green-500": "green-400",
+//     "bg-emerald-200": "emerald-100",
+//     "bg-orange-200": "orange-100",
+//   };
+
+//   const lighten50 = {
+//     "gray-900": "gray-300",
+//     "red-500": "red-100",
+//     "green-500": "green-100",
+//     "bg-emerald-200": "emerald-50",
+//     "bg-orange-200": "orange-50",
+//   };
+
+//   const lighten80 = {
+//     "gray-900": "gray-200",
+//     "red-500": "red-50",
+//     "green-500": "green-50",
+//     "bg-emerald-200": "emerald-25",
+//     "bg-orange-200": "orange-25",
+//   };
+
+//   const darken20 = {
+//     "gray-500": "gray-600",
+//     "red-500": "red-600",
+//     "green-500": "green-600",
+//     "bg-emerald-200": "emerald-300",
+//     "bg-orange-200": "orange-300",
+//   };
+
+//   const darken50 = {
+//     "gray-500": "gray-700",
+//     "red-500": "red-700",
+//     "green-500": "green-700",
+//     "bg-emerald-200": "emerald-400",
+//     "bg-orange-200": "orange-400",
+//   };
+
+//   const darken80 = {
+//     "gray-500": "gray-800",
+//     "red-500": "red-800",
+//     "green-500": "green-800",
+//     "bg-emerald-200": "emerald-500",
+//     "bg-orange-200": "orange-500",
+//   };
+
+//   // lighten 20%
+//   describe("Lighten colors by 20%", () => {
+//     it.each(Object.entries(lighten20))(
+//       "should lighten %s to %s",
+//       (color, expected) => {
+//         expect(lightenTw(color, 20)).toBe(expected);
+//       }
+//     );
+//   });
+
+//   // lighten 50%
+//   describe("Lighten colors by 50%", () => {
+//     it.each(Object.entries(lighten50))(
+//       "should lighten %s to %s",
+//       (color, expected) => {
+//         expect(lightenTw(color, 50)).toBe(expected);
+//       }
+//     );
+//   });
+
+//   // lighten 80%
+//   describe("Lighten colors by 80%", () => {
+//     it.each(Object.entries(lighten80))(
+//       "should lighten %s to %s",
+//       (color, expected) => {
+//         expect(lightenTw(color, 80)).toBe(expected);
+//       }
+//     );
+//   });
+
+//   // darken 20%
+//   describe("Darken colors by 20%", () => {
+//     it.each(Object.entries(darken20))(
+//       "should darken %s to %s",
+//       (color, expected) => {
+//         expect(darkenTw(color, 20)).toBe(expected);
+//       }
+//     );
+//   });
+
+//   // darken 50%
+//   describe("Darken colors by 50%", () => {
+//     it.each(Object.entries(darken50))(
+//       "should darken %s to %s",
+//       (color, expected) => {
+//         expect(darkenTw(color, 50)).toBe(expected);
+//       }
+//     );
+//   });
+
+//   // darken 80%
+//   describe("Darken colors by 80%", () => {
+//     it.each(Object.entries(darken80))(
+//       "should darken %s to %s",
+//       (color, expected) => {
+//         expect(darkenTw(color, 80)).toBe(expected);
+//       }
+//     );
+//   });
+// });
+
+/**
+ * Contains tests for generating random tailwind colors
+ */
+describe("Random tailwind colors", () => {
+  const { randomColor } = PigmentJS;
+
+  // random colors
+  describe("Random colors", () => {
+    it("should generate a random color", () => {
+      expect(randomColor("tw")).toMatch(
+        /(?:$|^|)(slate-|gray-|zinc-|neutral-|stone-|red-|orange-|amber-|yellow-|lime-|green-|emerald-|teal-|cyan-|sky-|blue-|indigo-|violet-|purple-|fuchsia-|pink-|rose-|white|black)(50|100|200|300|400|500|600|700|800|900|950|)(?:$|^|)/gi
+      );
+    });
+  });
+});
