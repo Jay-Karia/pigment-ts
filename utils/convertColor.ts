@@ -5,6 +5,7 @@ import { rgbToHsl } from "../lib/rgbToHsl";
 import { hslToHex } from "../lib/hslToHex";
 import { rgbToHex } from "../lib/rgbToHex";
 import { toTailwind } from "./toTailwind";
+import { fromTailwind } from "../lib/fromTailwind";
 
 /**
  * Convert a color from one format to another
@@ -56,6 +57,10 @@ export function convertColor(
   // rgb | hex | hsl to tw
   if (to === "tw") {
     return toTailwind(color, twPrefix);
+  }
+  // tw to rgb | hex | hsl
+  if (colorFormat === "tw") {
+    return fromTailwind(color, to);
   }
 
   return null;

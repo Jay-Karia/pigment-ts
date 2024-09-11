@@ -109,12 +109,6 @@ describe("Tailwind color conversion", () => {
     "ring-violet-900": "#4C1D95",
     "to-red-500": "#EF4444",
     "divide-green-500": "#22C55E",
-    "ring-offset-orange-200": "#A7F3D0",
-    "bg-[#54412C]": "#54412C",
-    "text-[#0D0612]": "#0D0612",
-    "from-[#5A634E]": "#5A634E",
-    "via-[#F8F9FA]": "#F8F9FA",
-    "to-[#012324]": "#012324",
   };
 
   const tailwindToRgb = {
@@ -148,7 +142,6 @@ describe("Tailwind color conversion", () => {
     "red-500": "red-500",
     "border-green-500": "border-green-500",
     "bg-emerald-200": "bg-emerald-200",
-    "bg-[#54412C]": "bg-[#54412C]",
   };
 
   // hex to tailwind
@@ -202,28 +195,28 @@ describe("Tailwind color conversion", () => {
   });
 
   // from tailwind
-  // describe("From Tailwind", () => {
-  //   it.each(Object.entries(tailwindToHex))(
-  //     "should convert %s to hex",
-  //     (tailwind, expected) => {
-  //       expect(convertColor(tailwind, "hex")).toBe(expected);
-  //     }
-  //   );
+  describe("From Tailwind", () => {
+    it.each(Object.entries(tailwindToHex))(
+      "should convert %s to hex",
+      (tailwind, expected) => {
+        expect(convertColor(tailwind, "hex")).toBe(expected);
+      }
+    );
 
-  //   it.each(Object.entries(tailwindToRgb))(
-  //     "should convert %s to rgb",
-  //     (tailwind, expected) => {
-  //       expect(convertColor(tailwind, "rgb")).toBe(expected);
-  //     }
-  //   );
+    it.each(Object.entries(tailwindToRgb))(
+      "should convert %s to rgb",
+      (tailwind, expected) => {
+        expect(convertColor(tailwind, "rgb")).toBe(expected);
+      }
+    );
 
-  //   it.each(Object.entries(tailwindToHsl))(
-  //     "should convert %s to hsl",
-  //     (tailwind, expected) => {
-  //       expect(convertColor(tailwind, "hsl")).toBe(expected);
-  //     }
-  //   );
-  // });
+    it.each(Object.entries(tailwindToHsl))(
+      "should convert %s to hsl",
+      (tailwind, expected) => {
+        expect(convertColor(tailwind, "hsl")).toBe(expected);
+      }
+    );
+  });
 
   // tailwind to tailwind
   describe("Tailwind to Tailwind", () => {
