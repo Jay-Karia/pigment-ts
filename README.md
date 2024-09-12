@@ -54,7 +54,7 @@ const lighter = lightenColor("#ff5733", 20);
 console.log(lighter); // '#FF8A66'
 
 // Get Tailwind CSS class
-const twClass = toTailwind("#ef4444");
+const twClass = toTailwind("#ef4343");
 console.log(twClass); // 'red-500'
 ```
 
