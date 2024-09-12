@@ -1,5 +1,8 @@
 # 🎨 PigmentTS
 
+[![npm](https://img.shields.io/npm/v/pigment-ts)](https://www.npmjs.com/package/pigment-ts)
+[![npm](https://img.shields.io/npm/dt/pigment-ts)](https://www.npmjs.com/package/pigment-ts)
+
 A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion between HEX, RGB, HSL, HSLA, and RGBA formats. Tailwind CSS support is built-in.
 
 ---
@@ -153,3 +156,15 @@ node
 > const PigmentTS = require('./dist/index.js');
 > PigmentTS.randomColor("hex");
 ```
+
+---
+
+### 🗺 Roadmap
+
+See the [ROADMAP.md](ROADMAP.md) file for a list of features that are planned for future releases.
+
+---
+
+### 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
