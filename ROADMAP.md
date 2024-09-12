@@ -4,7 +4,7 @@
 
 - [x] Add support for rgba and hsla
 - [ ] Blend Colors
-- [ ] Adjust Opacity
+- [x] Adjust Opacity
 
 ### v0.3.0
 
