@@ -16,6 +16,7 @@ A lightweight JavaScript/TypeScript utility for seamless color manipulation and 
 - **Color Conversion:** Convert colors between HEX, RGB, HSL, HSLA, RGBA and Tailwind CSS formats.
 - **Color Manipulation:** Lighten or darken a color by a specified percentage.
 - **Random Color Generation:** Generate random colors in HEX, RGB, HSL, or Tailwind CSS format.
+- **Opacity Manipulation:** Set the opacity of color in any format.
 
 More features coming soon!
 
@@ -129,6 +130,19 @@ toTailwind("#ef4444"); // 'red-500'
 toTailwind("#ef4444", "border"); // 'border-red-500'
 ```
 
+**setOpacity**
+
+Sets the opacity of a color in any format.
+
+```ts
+setOpacity(color: string, amount: number, to: "rgba" | "hsla"): string
+```
+
+```ts
+setOpacity("#ff5733", 0.5, "rgba"); // 'rgba(255, 88, 51, 0.5)'
+setOpacity("rgb(200, 100, 150)", 0.3, "hsla"); // hsla(330, 48%, 59%, 0.3)
+```
+
 ---
 
 ### 🛠️ Development
@@ -174,7 +188,5 @@ See the [ROADMAP.md](ROADMAP.md) file for a list of features that are planned fo
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-<br>
 
 **Support me by giving a ⭐ if you find this project useful!**
