@@ -16,7 +16,8 @@ A lightweight JavaScript/TypeScript utility for seamless color manipulation and 
 - **Color Conversion:** Convert colors between HEX, RGB, HSL, HSLA, RGBA and Tailwind CSS formats.
 - **Color Manipulation:** Lighten or darken a color by a specified percentage.
 - **Random Color Generation:** Generate random colors in HEX, RGB, HSL, or Tailwind CSS format.
-- **Opacity Manipulation:** Set the opacity of color in any format.
+- **Opacity Control:** Sets the opacity of color in any format.
+- **Blend Colors:** Blends two colors in any format together in a specified ratio.
 
 More features coming soon!
 
@@ -142,6 +143,22 @@ setOpacity(color: string, amount: number, to: "rgba" | "hsla"): string
 setOpacity("#ff5733", 0.5, "rgba"); // 'rgba(255, 88, 51, 0.5)'
 setOpacity("rgb(200, 100, 150)", 0.3, "hsla"); // hsla(330, 48%, 59%, 0.3)
 ```
+
+**blendColors**
+
+Blends two colors together to create a new color.
+
+```ts
+blendColors(color1: string, color2: string, ratio: number): string
+```
+
+```ts
+blendColors("#ff5733", "#333333", 0.5); // '#994533'
+blendColors("rgb(255, 87, 51)", "hsl(101, 100%, 60%)", 0.2); // 'rgb(227, 121, 51)'
+```
+
+**_Note_**: It returns the color in the format of the first color provided.<br>
+The prefix for Tailwind color will be taken from the first color.
 
 ---
 

@@ -30,7 +30,7 @@ export function convertColor(
   const colorFormat = detectFormat(color);
 
   if (!colorFormat) throw new Error("Invalid color format.");
-  if (colorFormat === to) return color.toUpperCase();
+  if (colorFormat === to) return color;
 
   if (colorFormat === "hex" && to === "rgb") return hexToRgb(color); // hex to rgb
   if (colorFormat === "hex" && to === "hsl") return rgbToHsl(hexToRgb(color)); // hex to rgb to hsl

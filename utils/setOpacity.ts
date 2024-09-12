@@ -5,14 +5,19 @@ import { rgbToHsl } from "../lib/rgbToHsl";
 import { setHslaOpacity } from "../lib/setHslaOpacity";
 import { convertColor } from "./convertColor";
 
+/**
+ * The setOpacity function sets the opacity of a color
+ * @param color The color to set the opacity of
+ * @param amount The amount of opacity to set
+ * @param to The format to convert the color to
+ * @returns The color with the opacity set
+ */
 export function setOpacity(
   color: string,
   amount: number,
   to: "rgba" | "hsla"
 ): string {
   const format = detectFormat(color);
-
-  console.log(format, color);
 
   if (!format) throw new Error("Invalid color format");
   if (amount < 0 || amount > 1) throw new Error("Invalid opacity amount");

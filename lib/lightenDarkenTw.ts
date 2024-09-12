@@ -77,7 +77,7 @@ function calcAmount(
 /**
  * Extracts the prefix from a tailwind color
  */
-function extractPrefix(twColor: string): string {
+export function extractPrefix(twColor: string): string {
   for (const prefix of TAILWIND_PREFIXES) {
     if (twColor.startsWith(prefix)) {
       return prefix;
