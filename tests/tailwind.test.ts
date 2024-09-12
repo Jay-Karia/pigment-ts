@@ -16,7 +16,7 @@ describe("Tailwind color conversion", () => {
     "#4C1D95": "violet-900",
     "#4B5563": "gray-600",
     "#66A50D": "lime-600",
-    "#EF4444": "red-500",
+    "#EF4343": "red-500",
     "#22C55E": "green-500",
     "#A7F3D0": "emerald-200",
     "#FED6A9": "orange-200",
@@ -71,7 +71,7 @@ describe("Tailwind color conversion", () => {
     },
     {
       prefix: "to",
-      color: "rgb(239, 68, 68)",
+      color: "rgb(239, 67, 67)",
       expected: "to-red-500",
     },
     {
@@ -101,13 +101,13 @@ describe("Tailwind color conversion", () => {
     "violet-900": "#4C1D95",
     "gray-600": "#4B5563",
     "lime-600": "#66A50D",
-    "red-500": "#EF4444",
+    "red-500": "#EF4343",
     "green-500": "#22C55E",
     "emerald-200": "#A7F3D0",
     "orange-200": "#FED6A9",
     "border-cyan-900": "#164E63",
     "ring-violet-900": "#4C1D95",
-    "to-red-500": "#EF4444",
+    "to-red-500": "#EF4343",
     "divide-green-500": "#22C55E",
   };
 

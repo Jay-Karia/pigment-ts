@@ -68,7 +68,7 @@ export const hexTailwindMap: Record<string, string> = {
   "#FECACA": "red-200",
   "#FCA5A5": "red-300",
   "#F87171": "red-400",
-  "#EF4444": "red-500",
+  "#EF4343": "red-500",
   "#DC2626": "red-600",
   "#B91C1C": "red-700",
   "#991B1B": "red-800",
