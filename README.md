@@ -3,7 +3,9 @@
 [![npm](https://img.shields.io/npm/v/pigment-ts)](https://www.npmjs.com/package/pigment-ts)
 [![npm](https://img.shields.io/npm/dt/pigment-ts)](https://www.npmjs.com/package/pigment-ts)
 
-![PigmentTS](public/banner.png)
+<img src="./public/banner.png" alt="PigmentTS Banner" style="width: 100%">
+
+<br>
 
 A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion between HEX, RGB, HSL, HSLA, and RGBA formats. Tailwind CSS support is built-in.
 
