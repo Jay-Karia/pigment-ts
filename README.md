@@ -1,12 +1,12 @@
 # 🎨 PigmentTS
 
-A lightweight JavaScript utility for seamless color manipulation and conversion between HEX, RGB, and HSL formats. Tailwind CSS support is built-in.
+A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion between HEX, RGB, HSL, HSLA, and RGBA formats. Tailwind CSS support is built-in.
 
 ---
 
 ### ✨ Features
 
-- **Color Conversion:** Convert colors between HEX, RGB, HSL and Tailwind CSS formats.
+- **Color Conversion:** Convert colors between HEX, RGB, HSL, HSLA, RGBA and Tailwind CSS formats.
 - **Color Manipulation:** Lighten or darken a color by a specified percentage.
 - **Random Color Generation:** Generate random colors in HEX, RGB, HSL, or Tailwind CSS format.
 
@@ -60,7 +60,7 @@ console.log(randomHex); // '#A1B2C3'
 Converts a color from one format to another. Supported formats are HEX, RGB, HSL, and Tailwind CSS.
 
 ```ts
-convertColor(color: string, format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string
+convertColor(color: string, format: "hex" | "rgb" | "hsl" | "tw" | "rgba" | "hsla", prefix?: string): string
 ```
 
 ```ts
@@ -99,7 +99,7 @@ darkenColor("#ff5733", 20); // '#CC2400'
 Generates a random color in the specified format.
 
 ```ts
-randomColor(format: "hex" | "rgb" | "hsl" | "tw", prefix?: string): string
+randomColor(format: "hex" | "rgb" | "hsl" | "tw" | "rgba" | "hsla", prefix?: string): string
 ```
 
 ```ts
