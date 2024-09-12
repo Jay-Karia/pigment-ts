@@ -23,6 +23,13 @@ More features coming soon!
 
 ---
 
+### 🔮 What's New
+
+- Support for HSLA and RGBA formats
+- New utility functions for opacity control and color blending
+
+---
+
 ### 🚀 Getting Started
 
 **Installation:** Install PigmentTS via npm
