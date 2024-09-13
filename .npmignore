@@ -13,3 +13,5 @@ index.ts
 babel.config.js
 eslint.config.mjs
 tsup.config.ts
+CONTRIBUTING.md
+ROADMAP.md

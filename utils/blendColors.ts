@@ -22,19 +22,19 @@ export function blendColors(
   if (!format || !format2) throw new Error("Invalid color format");
   if (color === color2) return color;
 
-  const hexColor = convertColor(color, "rgb") as string;
-  const hexColor2 = convertColor(color2, "rgb") as string;
+  const hexColor = convertColor(color, "rgb");
+  const hexColor2 = convertColor(color2, "rgb");
 
   const blendedHexColor = blendRgb(hexColor, hexColor2, ratio);
 
   if (format === "hsla") {
     const alpha = color.split(", ")[3];
-    const hslaColor = convertColor(blendedHexColor, "hsla") as string;
+    const hslaColor = convertColor(blendedHexColor, "hsla");
     return `${setHslaOpacity(hslaColor, alpha.replace(")", ""))}`;
   }
   if (format === "rgba") {
     const alpha2 = color.split(", ")[3];
-    const rgbaColor = convertColor(blendedHexColor, "rgba") as string;
+    const rgbaColor = convertColor(blendedHexColor, "rgba");
     const hslaColor = setHslaOpacity(
       rgbaToHsla(rgbaColor),
       alpha2.replace(")", "")
@@ -45,5 +45,5 @@ export function blendColors(
   if (format === "tw")
     return `${extractPrefix(color)}${convertColor(blendedHexColor, format)}`;
 
-  return convertColor(blendedHexColor, format) as string;
+  return convertColor(blendedHexColor, format);
 }

@@ -1,8 +1,6 @@
 import { detectFormat } from "../lib/detectFormat";
 import { hexTailwindMap } from "../lib/hexTailwindMap";
-import { hslaToRgba, rgbaToRgb } from "../lib/hslaAndRgba";
-import { hslToHex } from "../lib/hslToHex";
-import { rgbToHex } from "../lib/rgbToHex";
+import { convertColor } from "./convertColor";
 
 /**
  * Converts a color to its tailwind equivalent
@@ -12,15 +10,9 @@ import { rgbToHex } from "../lib/rgbToHex";
  */
 export function toTailwind(color: string, prefix?: string): string {
   const format = detectFormat(color);
-  let hexColor = color;
+  if (format === "tw" || color == "black" || color == "white") return color;
 
-  if (format === "rgba") hexColor = rgbToHex(rgbaToRgb(color));
-  else if (format === "hsla") hexColor = rgbToHex(rgbaToRgb(hslaToRgba(color)));
-  else if (format === "rgb") hexColor = rgbToHex(color);
-  else if (format === "hsl") hexColor = hslToHex(color);
-  else if (format === "hex") hexColor = color.toUpperCase();
-  else if (format === "tw" || color == "black" || color == "white")
-    return color;
+  const hexColor = convertColor(color, "hex");
 
   let tailwindEquivalent = hexTailwindMap[hexColor];
   if (tailwindEquivalent === undefined && !color.includes("-"))

@@ -26,7 +26,7 @@ export function convertColor(
   color: string,
   to: Format,
   twPrefix?: string
-): string | null {
+): string {
   const colorFormat = detectFormat(color);
 
   if (!colorFormat) throw new Error("Invalid color format.");
@@ -61,5 +61,5 @@ export function convertColor(
   if (colorFormat === "hsla" && to === "rgba") return hslaToRgba(color); // hsla to rgba
   if (colorFormat === "hsla" && to === "hsl") return hslaToHsl(color); // hsla to hsl
 
-  return null;
+  return "";
 }

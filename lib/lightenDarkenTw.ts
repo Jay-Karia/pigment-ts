@@ -2,6 +2,11 @@ import { TAILWIND_PREFIXES } from "../constants";
 import { detectFormat } from "./detectFormat";
 import { removeTailwindPrefix } from "./fromTailwind";
 
+function checkInputs(twColor: string, amount: number) {
+  if (amount < 0 || amount > 100) throw new Error("Invalid percentage");
+  if (amount === 0) return twColor;
+}
+
 /**
  * Lightens a tailwind color by a percentage
  * @param twColor The tailwind color to be lightened
@@ -9,21 +14,15 @@ import { removeTailwindPrefix } from "./fromTailwind";
  * @returns The lightened tailwind color
  */
 export function lightenTw(twColor: string, amount: number): string {
-  if (amount < 0 || amount > 100) throw new Error("Invalid percentage");
-  if (amount === 0) return twColor;
+  checkInputs(twColor, amount);
 
   const format = detectFormat(twColor);
   if (!format) throw new Error("Invalid color format");
 
-  const prefix = extractPrefix(twColor);
   const colorAndShade = removeTailwindPrefix(twColor);
-
-  const baseColor = extract(colorAndShade).color;
   const originalShade = extract(colorAndShade).shade;
 
-  const modifiedShade = calcAmount(amount, true, originalShade);
-
-  return `${prefix}${baseColor}-${modifiedShade}`;
+  return `${extractPrefix(twColor)}${extract(colorAndShade).color}-${calcAmount(amount, true, originalShade)}`;
 }
 
 /**
@@ -33,21 +32,15 @@ export function lightenTw(twColor: string, amount: number): string {
  * @returns The darkened tailwind color
  */
 export function darkenTw(twColor: string, amount: number): string {
-  if (amount < 0 || amount > 100) throw new Error("Invalid percentage");
-  if (amount === 0) return twColor;
+  checkInputs(twColor, amount);
 
   const format = detectFormat(twColor);
   if (!format) throw new Error("Invalid color format");
 
-  const prefix = extractPrefix(twColor);
   const colorAndShade = removeTailwindPrefix(twColor);
-
-  const baseColor = extract(colorAndShade).color;
   const originalShade = extract(colorAndShade).shade;
 
-  const modifiedShade = calcAmount(amount, false, originalShade);
-
-  return `${prefix}${baseColor}-${modifiedShade}`;
+  return `${extractPrefix(twColor)}${extract(colorAndShade).color}-${calcAmount(amount, false, originalShade)}`;
 }
 
 /**
@@ -62,27 +55,20 @@ function calcAmount(
   if (amount === 100 && !lighten) return 900;
 
   const modifier = lighten ? -1 : 1;
-
   const modifiedShade = originalShade + modifier * (amount / 100) * 900;
 
   if (modifiedShade < 50) return 50;
   if (modifiedShade > 900) return 900;
 
-  // round to tailwind shade
-  const roundedShade = Math.round(modifiedShade / 100) * 100;
-
-  return roundedShade;
+  return Math.round(modifiedShade / 100) * 100;
 }
 
 /**
  * Extracts the prefix from a tailwind color
  */
 export function extractPrefix(twColor: string): string {
-  for (const prefix of TAILWIND_PREFIXES) {
-    if (twColor.startsWith(prefix)) {
-      return prefix;
-    }
-  }
+  for (const prefix of TAILWIND_PREFIXES)
+    if (twColor.startsWith(prefix)) return prefix;
 
   return "";
 }

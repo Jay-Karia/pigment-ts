@@ -1,8 +1,6 @@
 import { Format } from "../types/format";
+import { convertColor } from "../utils/convertColor";
 import { hexToRgb } from "./hexToRgb";
-import { hslToHsla, rgbToRgba } from "./hslaAndRgba";
-import { rgbToHex } from "./rgbToHex";
-import { rgbToHsl } from "./rgbToHsl";
 
 /**
  * Lightens a color by a percentage
@@ -22,17 +20,9 @@ export function lightenHex(hexColor: string, percent: number, format: Format) {
   const g = Math.min(255, rgbColor[1] + amt);
   const b = Math.min(255, rgbColor[2] + amt);
 
-  let modifiedColor = "";
+  const rgb = `rgb(${r}, ${g}, ${b})`;
 
-  if (format === "rgb") modifiedColor = `rgb(${r}, ${g}, ${b})`;
-  else if (format === "hsl") modifiedColor = rgbToHsl(`rgb(${r}, ${g}, ${b})`);
-  else if (format === "hsla")
-    modifiedColor = hslToHsla(rgbToHsl(`rgb(${r}, ${g}, ${b})`)); // rgb to hsl to hsla
-  else if (format === "rgba")
-    modifiedColor = rgbToRgba(`rgb(${r}, ${g}, ${b})`); // rgb to rgba
-  else modifiedColor = rgbToHex(`rgb(${r}, ${g}, ${b})`);
-
-  return modifiedColor;
+  return convertColor(rgb, format);
 }
 
 /**
@@ -53,15 +43,7 @@ export function darkenHex(hexColor: string, percent: number, format: Format) {
   const g = Math.max(0, rgbColor[1] - amt);
   const b = Math.max(0, rgbColor[2] - amt);
 
-  let modifiedColor = "";
+  const rgb = `rgb(${r}, ${g}, ${b})`;
 
-  if (format === "rgb") modifiedColor = `rgb(${r}, ${g}, ${b})`;
-  else if (format === "hsl") modifiedColor = rgbToHsl(`rgb(${r}, ${g}, ${b})`);
-  else if (format === "rgba")
-    modifiedColor = rgbToRgba(`rgb(${r}, ${g}, ${b})`);
-  else if (format === "hsla")
-    modifiedColor = hslToHsla(rgbToHsl(`rgb(${r}, ${g}, ${b})`)); // rgb to hsl to hsla
-  else modifiedColor = rgbToHex(`rgb(${r}, ${g}, ${b})`);
-
-  return modifiedColor;
+  return convertColor(rgb, format);
 }

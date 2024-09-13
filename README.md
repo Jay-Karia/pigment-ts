@@ -23,10 +23,11 @@ More features coming soon!
 
 ---
 
-### 🔮 What's New
+### 🔮 What's New in v0.2
 
 - Support for HSLA and RGBA formats
 - New utility functions for opacity control and color blending
+- Optimized codebase for better performance and reduced bundle size
 
 ---
 
@@ -134,8 +135,8 @@ toTailwind(color: string, prefix?: string): string
 ```
 
 ```ts
-toTailwind("#ef4444"); // 'red-500'
-toTailwind("#ef4444", "border"); // 'border-red-500'
+toTailwind("#ef4343"); // 'red-500'
+toTailwind("#ef4343", "border"); // 'border-red-500'
 ```
 
 **setOpacity**

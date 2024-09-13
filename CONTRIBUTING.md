@@ -5,20 +5,26 @@ Thank you for considering contributing to PigmentTS! We welcome all types of con
 ## How Can You Contribute?
 
 ### 1. Report Bugs
+
 If you encounter any bugs or issues, please report them in the [GitHub Issues](https://github.com/Jay-Karia/pigment-ts/issues) with the following details:
+
 - **Describe the bug**: Provide a concise description of the problem.
 - **Steps to reproduce**: Outline the steps to replicate the issue.
 - **Expected behavior**: What should happen instead?
 - **Screenshots or code snippets**: If applicable, provide additional context.
 
 ### 2. Suggest New Features
+
 We’re always open to new ideas! You can suggest new features or enhancements by creating a [GitHub issue](https://github.com/Jay-Karia/pigment-ts/issues). Make sure to include:
+
 - **Feature description**: Explain the feature and how it improves PigmentTS.
 - **Use cases**: Describe scenarios where the feature would be useful.
 - **Examples**: If possible, provide examples of the feature in action.
 
 ### 3. Submit Pull Requests
+
 We welcome pull requests (PRs) for new features, bug fixes, and documentation improvements. Please follow these steps:
+
 1. **Fork the repository**: Clone it to your local machine.
 2. **Create a new branch**: Use a descriptive name for your branch (e.g., `fix/color-conversion`, `feat/format-support`).
 3. **Make changes**: Implement your feature or fix.
@@ -28,6 +34,7 @@ We welcome pull requests (PRs) for new features, bug fixes, and documentation im
 7. **Submit a pull request**: Make sure to explain your changes clearly in the PR description.
 
 ### 4. Improve Documentation
+
 Good documentation is essential for any project. If you find any inconsistencies or want to add new examples or tutorials, feel free to contribute.
 
 ## Coding Guidelines

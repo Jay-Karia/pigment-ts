@@ -1,9 +1,7 @@
 import { Format } from "../types/format";
 import { hexTailwindMapInverted } from "./hexTailwindMap";
-import { hexToRgb } from "./hexToRgb";
-import { rgbToHsl } from "./rgbToHsl";
 import { TAILWIND_PREFIXES } from "../constants/index";
-import { hslToHsla, rgbToRgba } from "./hslaAndRgba";
+import { convertColor } from "../utils/convertColor";
 
 /**
  * Removes the tailwind prefix from a color
@@ -38,12 +36,5 @@ export function fromTailwind(twColor: string, format: Format) {
   const color = removeTailwindPrefix(twColor);
   const hexColor = tailwindToHex(color);
 
-  if (format === "rgb") return hexToRgb(hexColor);
-  else if (format === "hsl")
-    return rgbToHsl(hexToRgb(hexColor)); // hex to rgb to hsl
-  else if (format === "rgba")
-    return rgbToRgba(hexToRgb(hexColor)); // hex to rgb to rgba
-  else if (format === "hsla") return hslToHsla(rgbToHsl(hexToRgb(hexColor))); // hex to rgb to hsl to hsla
-
-  return hexColor;
+  return convertColor(hexColor, format);
 }
