@@ -169,47 +169,21 @@ The prefix for Tailwind color will be taken from the first color.
 
 ---
 
-### 🛠️ Development
-
-**Clone the repository**
-
-```shell
-git clone https://github.com/Jay-Karia/pigment-ts
-```
-
-**Install dependencies**
-
-```shell
-npm install
-```
-
-**Build the project**
-
-```shell
-npm run build
-```
-
-**See changes in action**
-
-Open `node` in terminal and import the module
-
-```shell
-node
-> const PigmentTS = require('./dist/index.js');
-> PigmentTS.randomColor("hex");
-```
-
----
-
 ### 🗺 Roadmap
 
-See the [ROADMAP.md](ROADMAP.md) file for a list of features that are planned for future releases.
+See the [ROADMAP.md](ROADMAP) file for a list of features that are planned for future releases.
 
 ---
 
 ### 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+### 🤝 Contribution
+
+See the [CONTRIBUTING](CONTRIBUTING.md) file for more information on how to contribute to this project.
 
 ---
 
