@@ -14,8 +14,8 @@ A lightweight JavaScript/TypeScript utility for seamless color manipulation and 
 ### ✨ Features
 
 - **Color Conversion:** Convert colors between HEX, RGB, HSL, HSLA, RGBA and Tailwind CSS formats.
-- **Color Manipulation:** Lighten or darken a color by a specified percentage.
-- **Random Color Generation:** Generate random colors in HEX, RGB, HSL, or Tailwind CSS format.
+- **Lightness Control:** Lighten or darken a color by a specified percentage.
+- **Random Color Generation:** Generate random colors in HEX, RGB, HSL, HSLA, RGBA or Tailwind CSS format.
 - **Opacity Control:** Sets the opacity of color in any format.
 - **Blend Colors:** Blends two colors in any format together in a specified ratio.
 
