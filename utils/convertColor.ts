@@ -32,34 +32,72 @@ export function convertColor(
   if (!colorFormat) throw new Error("Invalid color format.");
   if (colorFormat === to) return color;
 
-  if (colorFormat === "hex" && to === "rgb") return hexToRgb(color); // hex to rgb
-  if (colorFormat === "hex" && to === "hsl") return rgbToHsl(hexToRgb(color)); // hex to rgb to hsl
-  if (colorFormat === "rgb" && to === "hex") return rgbToHex(color); // rgb to hex
-  if (colorFormat === "rgb" && to === "hsl") return rgbToHsl(color); // rgb to hsl
-  if (colorFormat === "hsl" && to === "hex") return hslToHex(color); // hsl to hex
-  if (colorFormat === "hsl" && to === "rgb") return hexToRgb(hslToHex(color)); // hsl to rgb
-  if (to === "tw") return toTailwind(color, twPrefix); // rgb | hex | hsl to tw
-  if (colorFormat === "tw") return fromTailwind(color, to); // tw to rgb | hex | hsl
-  if (colorFormat === "hex" && to === "rgba") return rgbToRgba(hexToRgb(color)); // hex to rgb to rgba
-  if (colorFormat === "rgb" && to === "rgba") return rgbToRgba(color); // rgb to rgba
-  if (colorFormat === "hsl" && to === "rgba")
-    return rgbToRgba(hexToRgb(hslToHex(color))); // hsl to hex to rgb to rgba
-  if (colorFormat === "hsla" && to === "rgba") return hslaToRgba(color); // hsla to rgba
-  if (colorFormat === "hex" && to === "hsla")
-    return hslToHsla(rgbToHsl(hexToRgb(color))); // hex to rgb to hsl to hsla
-  if (colorFormat === "rgb" && to === "hsla") return hslToHsla(rgbToHsl(color)); // rgb to hsl to hsla
-  if (colorFormat === "hsl" && to === "hsla") return hslToHsla(color); // hsl to hsla
-  if (colorFormat === "rgba" && to === "hsla") return rgbaToHsla(color); // rgba to hsla
-  if (colorFormat === "rgba" && to === "rgb") return rgbaToRgb(color); // rgba to rgb
-  if (colorFormat === "rgba" && to === "hex") return rgbToHex(rgbaToRgb(color)); // rgba to rgb to hex
-  if (colorFormat === "rgba" && to === "hsl")
-    return hslaToHsl(rgbaToHsla(color)); // rgba to hsl to hsla
-  if (colorFormat === "hsla" && to === "rgb")
-    return rgbaToRgb(hslaToRgba(color)); // hsla to rgba to rgb
-  if (colorFormat === "hsla" && to === "hex")
-    return rgbToHex(rgbaToRgb(hslaToRgba(color))); // hsla to rgba to rgb to hex
-  if (colorFormat === "hsla" && to === "rgba") return hslaToRgba(color); // hsla to rgba
-  if (colorFormat === "hsla" && to === "hsl") return hslaToHsl(color); // hsla to hsl
+  switch (colorFormat) {
+    case "hex":
+      switch (to) {
+        case "rgb":
+          return hexToRgb(color);
+        case "hsl":
+          return rgbToHsl(hexToRgb(color));
+        case "rgba":
+          return rgbToRgba(hexToRgb(color));
+        case "hsla":
+          return hslToHsla(rgbToHsl(hexToRgb(color)));
+      }
+      break;
+    case "rgb":
+      switch (to) {
+        case "hex":
+          return rgbToHex(color);
+        case "hsl":
+          return rgbToHsl(color);
+        case "rgba":
+          return rgbToRgba(color);
+        case "hsla":
+          return hslToHsla(rgbToHsl(color));
+      }
+      break;
+    case "hsl":
+      switch (to) {
+        case "hex":
+          return hslToHex(color);
+        case "rgb":
+          return hexToRgb(hslToHex(color));
+        case "rgba":
+          return rgbToRgba(hexToRgb(hslToHex(color)));
+        case "hsla":
+          return hslToHsla(color);
+      }
+      break;
+    case "rgba":
+      switch (to) {
+        case "hsla":
+          return rgbaToHsla(color);
+        case "rgb":
+          return rgbaToRgb(color);
+        case "hex":
+          return rgbToHex(rgbaToRgb(color));
+        case "hsl":
+          return hslaToHsl(rgbaToHsla(color));
+      }
+      break;
+    case "hsla":
+      switch (to) {
+        case "rgba":
+          return hslaToRgba(color);
+        case "rgb":
+          return rgbaToRgb(hslaToRgba(color));
+        case "hex":
+          return rgbToHex(rgbaToRgb(hslaToRgba(color)));
+        case "hsl":
+          return hslaToHsl(color);
+      }
+      break;
+    case "tw":
+      return fromTailwind(color, to);
+  }
+
+  if (to === "tw") return toTailwind(color, twPrefix);
 
   return "";
 }

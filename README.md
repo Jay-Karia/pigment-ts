@@ -172,7 +172,7 @@ The prefix for Tailwind color will be taken from the first color.
 
 ### 🗺 Roadmap
 
-See the [ROADMAP.md](ROADMAP) file for a list of features that are planned for future releases.
+See the [ROADMAP](ROADMAP.md) file for a list of features that are planned for future releases.
 
 ---
 
