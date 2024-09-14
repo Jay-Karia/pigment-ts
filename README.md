@@ -7,7 +7,7 @@
 
 <br>
 
-A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion between HEX, RGB, HSL, HSLA, and RGBA formats. Tailwind CSS support is built-in.
+A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion. Tailwind CSS support is built-in.
 
 **Supported Formats** - HEX, RGB, HSL, RGBA, HSLA, Tailwind CSS
 
@@ -16,7 +16,7 @@ A lightweight JavaScript/TypeScript utility for seamless color manipulation and 
 ### ✨ Features
 
 - **Color Conversion:** Convert colors between all the supported formats.
-- **Lightness Control:** Lighten or darken a color by a specified percentage.
+- **Brightness Control:** Lighten or darken a color by a specified percentage.
 - **Random Color Generation:** Generate random colors in of the supported format.
 - **Opacity Control:** Set the opacity of color in any format.
 - **Blend Colors:** Blend two colors in any format together in a specified ratio.
