@@ -17,7 +17,6 @@ export function toTailwind(color: string, prefix?: string): string {
   let tailwindEquivalent = hexTailwindMap[hexColor];
   if (tailwindEquivalent === undefined && !color.includes("-"))
     tailwindEquivalent = `[${hexColor}]`;
-  else if (tailwindEquivalent === undefined) tailwindEquivalent = color;
 
   return prefix ? `${prefix}-${tailwindEquivalent}` : tailwindEquivalent;
 }

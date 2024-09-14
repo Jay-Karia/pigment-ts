@@ -17,8 +17,7 @@ export function setOpacity(
 ): string {
   const format = detectFormat(color);
 
-  if (!format) throw new Error("Invalid color format");
-  if (amount < 0 || amount > 1) throw new Error("Invalid opacity amount");
+  if (amount < 0 || amount > 1) return "Invalid opacity amount";
 
   if (format === "hsla") return convertColor(setHslaOpacity(color, amount), to);
   else if (format === "rgba")
@@ -35,11 +34,9 @@ export function setOpacity(
     );
   else if (format === "hsl")
     return convertColor(setHslaOpacity(hslToHsla(color), amount), to);
-  else if (format === "tw")
+  else
     return convertColor(
       setHslaOpacity(convertColor(color, "hsla"), amount),
       to
     );
-
-  return "";
 }

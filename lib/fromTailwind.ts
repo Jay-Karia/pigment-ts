@@ -20,7 +20,6 @@ export function removeTailwindPrefix(twColor: string) {
  */
 function tailwindToHex(twColor: string) {
   const hexEquivalent = hexTailwindMapInverted[twColor];
-  if (hexEquivalent === undefined) throw new Error("Invalid tailwind color.");
   return hexEquivalent;
 }
 
@@ -31,8 +30,6 @@ function tailwindToHex(twColor: string) {
  * @returns The color in the specified format
  */
 export function fromTailwind(twColor: string, format: Format) {
-  if (format === "tw") return twColor;
-
   const color = removeTailwindPrefix(twColor);
   const hexColor = tailwindToHex(color);
 

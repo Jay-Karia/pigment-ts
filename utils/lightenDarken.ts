@@ -10,8 +10,8 @@ import { convertColor } from "./convertColor";
 function checkInputs(color: string, percent: number) {
   const format = detectFormat(color);
 
-  if (!format) throw new Error("Invalid color format");
-  if (percent < 0 || percent > 100) throw new Error("Invalid percentage");
+  if (!format) return "Invalid color format";
+  if (percent < 0 || percent > 100) return "Invalid percentage";
   if (percent == 0) return color;
 }
 

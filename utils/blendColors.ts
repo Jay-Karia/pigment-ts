@@ -19,7 +19,7 @@ export function blendColors(
   const format = detectFormat(color);
   const format2 = detectFormat(color2);
 
-  if (!format || !format2) throw new Error("Invalid color format");
+  if (!format || !format2) return "Invalid color format";
   if (color === color2) return color;
 
   const hexColor = convertColor(color, "rgb");

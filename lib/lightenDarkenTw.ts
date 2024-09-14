@@ -1,11 +1,5 @@
 import { TAILWIND_PREFIXES } from "../constants";
-import { detectFormat } from "./detectFormat";
 import { removeTailwindPrefix } from "./fromTailwind";
-
-function checkInputs(twColor: string, amount: number) {
-  if (amount < 0 || amount > 100) throw new Error("Invalid percentage");
-  if (amount === 0) return twColor;
-}
 
 /**
  * Lightens a tailwind color by a percentage
@@ -14,10 +8,8 @@ function checkInputs(twColor: string, amount: number) {
  * @returns The lightened tailwind color
  */
 export function lightenTw(twColor: string, amount: number): string {
-  checkInputs(twColor, amount);
-
-  const format = detectFormat(twColor);
-  if (!format) throw new Error("Invalid color format");
+  if (amount < 0 || amount > 100) return "Invalid percentage";
+  if (amount === 0) return twColor;
 
   const colorAndShade = removeTailwindPrefix(twColor);
   const originalShade = extract(colorAndShade).shade;
@@ -32,10 +24,8 @@ export function lightenTw(twColor: string, amount: number): string {
  * @returns The darkened tailwind color
  */
 export function darkenTw(twColor: string, amount: number): string {
-  checkInputs(twColor, amount);
-
-  const format = detectFormat(twColor);
-  if (!format) throw new Error("Invalid color format");
+  if (amount < 0 || amount > 100) return "Invalid percentage";
+  if (amount === 0) return twColor;
 
   const colorAndShade = removeTailwindPrefix(twColor);
   const originalShade = extract(colorAndShade).shade;
