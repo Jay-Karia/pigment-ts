@@ -25,6 +25,12 @@ More features coming soon!
 
 ---
 
+### ⚽ Playground
+
+Try out PigmentTS in the [Playground](https://pigment-ts.vercel.app/)
+
+---
+
 ### 🔮 What's New in v0.2
 
 - Support for HSLA and RGBA formats
