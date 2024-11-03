@@ -7,6 +7,7 @@
 - [x] Adjust Opacity
 
 ### v0.3
+
 - [ ] Add support for Tailwind States (hover:, focus:, ...)
 - [ ] Add support for non standard tailwind colors (bg-[#efefef], text-[#efefef], ...)
 - [ ] Improve tailwind color conversion (can get nearest tailwind equivalent color)
@@ -15,6 +16,7 @@
 - [ ] New format support: HSV
 
 ### v1.0
+
 - [ ] Adjust the warmth or coolness of a color
 - [ ] Named colors support (CSS named colors)
 - [ ] Theme builder: generate light dark theme variants from base color and more.
