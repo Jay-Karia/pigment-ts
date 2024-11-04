@@ -1,3 +1,5 @@
+"use client"
+
 import {
   ResizableHandle,
   ResizablePanel,
@@ -11,7 +13,7 @@ type PlaygroundProps = {
 
 export function Playground({ editor, console }: PlaygroundProps) {
   return (
-    <div className="h-full flex">
+    <div className="flex border">
       <ResizablePanelGroup direction="horizontal">
         <ResizablePanel defaultSize={70} minSize={30}>{editor}</ResizablePanel>
         <ResizableHandle withHandle/>
