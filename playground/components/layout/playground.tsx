@@ -1,14 +1,23 @@
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable";
+
 type PlaygroundProps = {
   editor: React.ReactNode;
   console: React.ReactNode;
-}
+};
 
 export function Playground({ editor, console }: PlaygroundProps) {
   return (
-    <div>
-      This is the playground layout
-      {editor}
-      {console}
+    <div className="h-full flex">
+      <ResizablePanelGroup direction="horizontal">
+        <ResizablePanel defaultSize={70} minSize={30}>{editor}</ResizablePanel>
+        <ResizableHandle withHandle/>
+        <ResizablePanel defaultSize={30} minSize={20}>{console}</ResizablePanel>
+      </ResizablePanelGroup>
     </div>
-  )
+  );
 }
+

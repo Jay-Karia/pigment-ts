@@ -2,6 +2,7 @@ import { Logo } from "./logo";
 import Link from "next/link";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
+import { Button } from "./ui";
 
 const geistMono = localFont({
   src: "../app/fonts/GeistVF.woff",
@@ -13,7 +14,7 @@ export function Navbar() {
       <ul
         className={cn(
           geistMono.className,
-          "flex justify-start items-center gap-4"
+          "flex justify-start items-center gap-6"
         )}
       >
         <li>
@@ -22,10 +23,21 @@ export function Navbar() {
           </Link>
         </li>
         <li>
-          <Link href="https://www.pigment-ts-docs.com" target="_blank">Docs</Link>
+          <Button asChild variant={"link"} className="p-0">
+            <Link href="https://pigment-ts-docs.com" target="_blank">
+              Docs
+            </Link>
+          </Button>
         </li>
         <li>
-          <Link href="https://github.com/Jay-Karia/pigment-ts" target="_blank">GitHub</Link>
+          <Button asChild variant={"link"} className="p-0">
+            <Link
+              href="https://github.com/Jay-Karia/pigment-ts"
+              target="_blank"
+            >
+              GitHub
+            </Link>
+          </Button>
         </li>
       </ul>
     </nav>

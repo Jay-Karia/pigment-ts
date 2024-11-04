@@ -4,7 +4,10 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+}
+
+:root {
+  height: 100%;
 }
 
 @layer base {
