@@ -18,7 +18,7 @@ const LANGUAGE_INFO = {
 const NAV_LINKS = [
   {
     title: "Documentation",
-    href: "https://pigment-ts-docs.com/"
+    href: "https://pigment-ts-docs.vercel.app/"
   },
   {
     title: "GitHub",
