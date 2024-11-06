@@ -2,7 +2,7 @@
 
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
-import { useOutputStore } from "@/store/output";
+import { useOutputStore } from "@/store";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 const geistSans = localFont({

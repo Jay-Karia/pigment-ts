@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useCodeStore } from "@/store/code";
+import { useCodeStore } from "@/store";
 import Editor from "@monaco-editor/react";
 import * as monaco from "monaco-editor";
 

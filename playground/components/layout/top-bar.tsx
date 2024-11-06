@@ -4,9 +4,8 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import runCode from "@/actions/run-code";
-import { useCodeStore } from "@/store/code";
+import { useCodeStore, useOutputStore } from "@/store";
 import React from "react"
-import {useOutputStore} from "@/store/output";
 import {LanguageInfo} from "../language-info";
 
 const geistSans = localFont({
