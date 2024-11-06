@@ -1,4 +1,13 @@
-const DEFAULT_CODE = `const PigmentTS = require("pigment-ts");`
+const DEFAULT_CODE = `// Use functions directly
+const rgb = randomColor("rgb")
+const hex = randomColor("hex")
+
+// Use functions via PigmentTS object
+const blend = PigmentTS.blendColors(rgb, hex, 0.5);
+
+console.log("Color 1: " + rgb)
+console.log("Color 2: " + hex)
+console.log("Blend (50%): " + blend)`
 
 const LANGUAGE_INFO = {
   language: "javascript",
