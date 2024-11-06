@@ -9,7 +9,10 @@
 
 A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion. Tailwind CSS support is built-in.
 
-**Visit the [playground](https://pigment-ts.vercel.app/) to try out the library.**
+**Visit the [playground](https://pigment-ts.vercel.app/) to try out the library.** <br>
+**See the [documentation](https://pigment-ts-docs.vercel.app/) for the library**
+
+⚠ Documentation is not ready
 
 **Supported Formats** - HEX, RGB, HSL, RGBA, HSLA, Tailwind CSS
 
