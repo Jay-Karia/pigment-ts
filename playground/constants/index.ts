@@ -2,7 +2,7 @@ const DEFAULT_CODE = `// Use functions directly
 const rgb = randomColor("rgb")
 const hex = randomColor("hex")
 
-// Use functions via PigmentTS object
+// or via PigmentTS object
 const blend = PigmentTS.blendColors(rgb, hex, 0.5);
 
 console.log("Color 1: " + rgb)
