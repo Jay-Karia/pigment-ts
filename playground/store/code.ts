@@ -1,8 +1,9 @@
 import {CodeState} from "@/types/store";
 import { create } from "zustand";
+import { DEFAULT_CODE } from "@/constants";
 
 const useCodeStore = create<CodeState>()(set => ({
-  code: `function add(a, b) {\n  return a + b;\n}`,
+  code: DEFAULT_CODE,
   updateCode: (newCode: string) => set({ code: newCode }),
 }));
 

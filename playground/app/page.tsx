@@ -5,7 +5,7 @@ import {Playground} from "@/components/layout/playground";
 
 export default function Home() {
   return (
-    <div className="h-full flex flex-col w-full">
+    <div className="h-full flex flex-col w-full bg-zinc-900 text-white">
       <Navbar />
       <Playground editor={<CodeEditor />} console={<Console />} />
     </div>

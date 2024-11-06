@@ -23,14 +23,14 @@ export function Navbar() {
           </Link>
         </li>
         <li>
-          <Button asChild variant={"link"} className="p-0">
+          <Button asChild variant={"link"} className="p-0 text-white" >
             <Link href="https://pigment-ts-docs.com" target="_blank">
               Docs
             </Link>
           </Button>
         </li>
         <li>
-          <Button asChild variant={"link"} className="p-0">
+          <Button asChild variant={"link"} className="p-0 text-white">
             <Link
               href="https://github.com/Jay-Karia/pigment-ts"
               target="_blank"
