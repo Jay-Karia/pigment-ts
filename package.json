@@ -9,7 +9,8 @@
     "build": "tsup",
     "lint": "npx eslint .",
     "format": "npx prettier . --write",
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "minify": "npx terser dist/index.js -o dist/index.min.js -c -m"
   },
   "repository": {
     "type": "git",
