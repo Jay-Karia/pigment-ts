@@ -15,4 +15,15 @@ const LANGUAGE_INFO = {
   type: "commonjs"
 }
 
-export {DEFAULT_CODE, LANGUAGE_INFO}
+const NAV_LINKS = [
+  {
+    title: "Documentation",
+    href: "https://pigment-ts-docs.com/"
+  },
+  {
+    title: "GitHub",
+    href: "https://github.com/Jay-Karia/pigment-ts"
+  }
+]
+
+export {DEFAULT_CODE, LANGUAGE_INFO, NAV_LINKS}
