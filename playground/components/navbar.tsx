@@ -10,7 +10,7 @@ const geistMono = localFont({
 
 export function Navbar() {
   return (
-    <nav className="h-12 border-b px-4 flex items-center">
+    <nav className="h-12 px-4 flex items-center">
       <ul
         className={cn(
           geistMono.className,

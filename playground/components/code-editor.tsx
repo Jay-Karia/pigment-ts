@@ -10,7 +10,6 @@ import React, {useEffect} from "react";
 import { useCodeStore } from "@/store/code";
 import Editor, { monaco } from "@monaco-editor/react";
 import PigmentTS from "pigment-ts";
-import {Button} from "./ui";
 
 export function CodeEditor() {
   const code = useCodeStore(state => state.code);
@@ -39,14 +38,8 @@ export function CodeEditor() {
     }
   }, [])
 
-  function handleRunCode() {
-    if (editorRef.current === null) return;
-    console.log(code);
-  }
-  
-
   return (
-    <div className="w-full h-full p-4 bg-zinc-900 text-black">
+    <div className="w-full p-4 bg-zinc-900">
       <Editor
         height="90vh"
         defaultLanguage="javascript"
@@ -56,7 +49,6 @@ export function CodeEditor() {
         theme="vs-dark"
       />
 
-      <Button onClick={handleRunCode}>Run code</Button>
     </div>
   );
 }
