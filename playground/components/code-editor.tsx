@@ -45,7 +45,7 @@ export function CodeEditor() {
   return (
     <div className="w-full p-4 bg-zinc-900">
       <Editor
-        height="90vh"
+        height="85vh"
         defaultLanguage="javascript"
         defaultValue={code}
         onMount={handleEditorDidMount}

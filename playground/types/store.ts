@@ -3,4 +3,9 @@ interface CodeState {
   updateCode: (newCode: string) => void;
 }
 
-export { type CodeState };
+interface OutputState {
+  output: string,
+  updateOutput: (newOutput: string) => void;
+}
+
+export { type CodeState, type OutputState };
