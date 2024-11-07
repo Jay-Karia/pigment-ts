@@ -9,10 +9,8 @@
 
 A lightweight JavaScript/TypeScript utility for seamless color manipulation and conversion. Tailwind CSS support is built-in.
 
-**Visit the [playground](https://pigment-ts.vercel.app/) to try out the library.** <br>
-**See the [documentation](https://pigment-ts-docs.vercel.app/) for the library**
-
-⚠ Documentation is not ready
+**Visit the [playground](https://playground-pigment.vercel.app/) to try out the library.** <br>
+**See the [documentation](https://pigment-ts.vercel.app/) for the library**
 
 **Supported Formats** - HEX, RGB, HSL, RGBA, HSLA, Tailwind CSS
 
@@ -77,117 +75,15 @@ console.log(randomHex); // '#A1B2C3'
 
 ---
 
-### 📚 API Reference
-
-**convertColor**
-
-Converts a color from one format to another.
-
-```ts
-convertColor(color: string, format: "hex" | "rgb" | "hsl" | "tw" | "rgba" | "hsla", prefix?: string): string
-```
-
-```ts
-convertColor("#ff5733", "rgb"); // 'rgb(255, 87, 51)'
-convertColor("rgb(255, 87, 51)", "hex"); // '#FF5733'
-convertColor("#7f1d1d", "tw"); // 'red-900'
-convertColor("#7f1d1d", "tw", "bg"); // 'bg-red-900'
-```
-
-**lightenColor**
-
-Lightens a color by a specified percentage.
-
-```ts
-lightenColor(color: string, percent: number): string
-```
-
-```ts
-lightenColor("#ff5733", 20); // '#FF8A66'
-```
-
-**darkenColor**
-
-Darkens a color by a specified percentage.
-
-```ts
-darkenColor(color: string, percent: number): string
-```
-
-```ts
-darkenColor("#ff5733", 20); // '#CC2400'
-```
-
-**randomColor**
-
-Generates a random color in the specified format.
-
-```ts
-randomColor(format: "hex" | "rgb" | "hsl" | "tw" | "rgba" | "hsla", prefix?: string): string
-```
-
-```ts
-randomColor("hex"); // '#A1B2C3'
-randomColor("rgb"); // 'rgb(161, 178, 195)'
-randomColor("hsl"); // 'hsl(210, 26%, 70%)'
-randomColor("tw", "bg"); // 'bg-blue-300'
-```
-
-**toTailwind**
-
-Converts a color to a Tailwind CSS class.
-
-```ts
-toTailwind(color: string, prefix?: string): string
-```
-
-```ts
-toTailwind("#ef4343"); // 'red-500'
-toTailwind("#ef4343", "border"); // 'border-red-500'
-```
-
-**setOpacity**
-
-Sets the opacity of a color in any format.
-
-```ts
-setOpacity(color: string, amount: number, to: "rgba" | "hsla"): string
-```
-
-```ts
-setOpacity("#ff5733", 0.5, "rgba"); // 'rgba(255, 88, 51, 0.5)'
-setOpacity("rgb(200, 100, 150)", 0.3, "hsla"); // hsla(330, 48%, 59%, 0.3)
-```
-
-**blendColors**
-
-Blends two colors together to create a new color.
-
-```ts
-blendColors(color1: string, color2: string, ratio: number): string
-```
-
-```ts
-blendColors("#ff5733", "#333333", 0.5); // '#994533'
-blendColors("rgb(255, 87, 51)", "hsl(101, 100%, 60%)", 0.2); // 'rgb(227, 121, 51)'
-```
-
-**_Note_**: It returns the color in the format of the first color provided.<br>
-The prefix for Tailwind color will be taken from the first color.
-
----
-
 ### 🗺 Roadmap
 
 See the [ROADMAP](ROADMAP.md) file for a list of features that are planned for future releases.
 
----
 
 ### 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
 ### 🤝 Contribution
 
