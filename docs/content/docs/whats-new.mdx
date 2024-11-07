@@ -1,0 +1,42 @@
+---
+title: What's New
+description: Learn about the features and improvements in latest version
+---
+
+**Latest Version: 0.2**
+
+---
+
+#### Support for HSLA and RGBA formats
+
+PigmentTS now supports HSLA and RGBA color formats. You can now convert colors to HSLA and RGBA formats using the `convertColor` function.
+
+```ts
+import { convertColor } from "pigment-ts";
+
+// Convert HEX to HSLA
+const hsla = convertColor("#ff5733", "hsla");
+console.log(hsla); // 'hsla(9, 100%, 57%, 1)'
+```
+
+#### New utility functions for opacity control and color blending
+
+PigmentTS now includes new utility functions for opacity control and color blending. You can now adjust the opacity of a color using the `setOpacity` function and blend two colors together using the `blendColors` function.
+
+```ts
+import { setOpacity, blendColors } from "pigment-ts";
+
+// Set opacity to 50%
+const opaqueColor = setOpacity("#ff5733", 0.5);
+console.log(opaqueColor); // 'rgba(255, 87, 51, 0.5)'
+
+// Blend two colors together
+const blendedColor = blendColors("#ff5733", "#3366ff", 0.5);
+console.log(blendedColor); // '#7f8aff'
+```
+
+#### Optimized codebase for better performance and reduced bundle size
+
+PigmentTS has been optimized for better performance and reduced bundle size. The codebase has been refactored to improve performance and reduce the overall bundle size of the library.
+
+---

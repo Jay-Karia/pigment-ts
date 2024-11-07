@@ -7,7 +7,6 @@ import { Callout } from 'fumadocs-ui/components/callout';
 
 ### convertColor
 
-
 | **Function**                  | `pigment.convertCOlor(color: string, format: Format, prefix?: string) : string` |
 |-------------------------------|-------------------------------------------------------------------------|
 | **Description**               | Converts a color from one format to another.                          |
@@ -28,6 +27,8 @@ console.log(tw); // 'bg-green-200'
 
 <Callout title="Note" type="error">While converting hex to tailwind, use uppercase hex code. Support for lowecase will be added soon</Callout>
 
+---
+
 ### lightenColor
 
 | **Function**                  | `pigment.lightenColor(color: string, percent: number) : string` |
@@ -42,6 +43,8 @@ import pigment from "pigment-ts";
 const lightened = pigment.lightenColor("#ff5733", 20);
 console.log(lightened); // '#FF8A66'
 ```
+
+---
 
 ### darkenColor
 
@@ -58,6 +61,8 @@ const darkened = pigment.darkenColor("#ff5733", 20);
 console.log(darkened); // '#D93C1A'
 ```
 
+---
+
 ### randomColor
 
 | **Function**                  | `pigment.randomColor(format: Format, prefix?: string): string` |
@@ -73,6 +78,7 @@ const randomHex = pigment.randomColor("hex");
 console.log(randomHex); // '#A1B2C3'
 ```
 
+---
 
 ### toTailwind
 
@@ -94,6 +100,8 @@ console.log(tw2); // 'text-[#FF5733]'
 
 <Callout title="Note" type="error">Currently only the exact tailwind color will be converted. Support for nearest color will be added soon</Callout>
 
+---
+
 ### setOpacity
 
 | **Function**                  | `pigment.setOpacity(color: string, amount: number, to: Alpha) : string` |
@@ -108,6 +116,8 @@ import pigment from "pigment-ts";
 const withOpacity = pigment.setOpacity("#ff5733", 0.5, "rgba");
 console.log(withOpacity); // 'rgba(255, 87, 51, 0.5)'
 ```
+
+---
 
 ### blendColors
 
