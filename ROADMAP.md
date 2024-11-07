@@ -21,4 +21,4 @@
 - [ ] Named colors support (CSS named colors)
 - [ ] Theme builder: generate light dark theme variants from base color and more.
 - [ ] Palette generator: tailwind color palettes form base color.
-- [ ] Add documentation
+- [x] Add documentation

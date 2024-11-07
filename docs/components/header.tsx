@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function Header() {
     return (
-        <div className="w-1/4 mt-24 h-max flex flex-col gap-4 items-center">
+        <div className="w-1/2 mt-24 flex flex-col gap-4 items-center p-4 ">
             <h1 className="text-5xl font-bold">PigmentTS</h1>
             <small className="text-sm font-medium text-fd-muted-foreground">A lightweight utility for color manipulation and conversion</small>
             <div className="mt-8 flex gap-6">
