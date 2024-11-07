@@ -1,15 +1,8 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 
-/**
- * Shared layout configurations
- *
- * you can configure layouts individually from:
- * Home Layout: app/(home)/layout.tsx
- * Docs Layout: app/docs/layout.tsx
- */
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: 'My App',
+    title: '🎨 PigmentTS',
   },
   links: [
     {
@@ -17,5 +10,14 @@ export const baseOptions: BaseLayoutProps = {
       url: '/docs',
       active: 'nested-url',
     },
+    {
+      text: "Getting Started",
+      url: "/getting-started"
+    },
+    {
+      text: "Playground",
+      url: "https://pigment-ts.vercel.app/",
+    }
   ],
+  githubUrl: 'https://github.com/Jay-Karia/pigment-ts',
 };
