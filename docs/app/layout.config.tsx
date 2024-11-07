@@ -12,7 +12,7 @@ export const baseOptions: BaseLayoutProps = {
     },
     {
       text: "Getting Started",
-      url: "/getting-started"
+      url: "/docs/getting-started"
     },
     {
       text: "Playground",

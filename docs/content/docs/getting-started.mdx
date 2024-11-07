@@ -1,0 +1,65 @@
+---
+title: Getting Started
+description: Get started with the library
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+### Installation
+
+Install the package using your package manager of choice.
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+  ```shell
+  npm install pigment-ts
+  ```
+  </Tab>
+  <Tab value="pnpm">
+  ```bash
+  pnpm add pigment-ts
+  ```
+  </Tab>
+  <Tab value="yarn">
+  ```bash
+  yarn add pigment-ts
+  ```
+  </Tab>
+  <Tab value="bun">
+  ```bash
+  bun add pigment-ts
+  ```
+  </Tab>
+</Tabs>
+
+### Usage
+
+Import all the function you need
+
+```ts title="index.ts"
+import { convertColor, lightenColor, toTailwind } from "pigment-ts";
+
+// Convert HEX to RGB
+const rgb = convertColor("#ff5733", "rgb");
+console.log(rgb); // 'rgb(255, 87, 51)'
+
+// Lighten a color by 20%
+const lighter = lightenColor("#ff5733", 20);
+console.log(lighter); // '#FF8A66'
+
+// Get Tailwind CSS class
+const twClass = toTailwind("#ef4343");
+console.log(twClass); // 'red-500'
+```
+
+Use all functions via default import
+
+```ts title="index.ts"
+import PigmentTS from "pigment-ts";
+
+const randomHex = PigmentTS.randomColor("hex");
+console.log(randomHex); // '#A1B2C3'
+```
+
+<Callout title="Note">You can also use in javascript files.</Callout>

@@ -8,7 +8,7 @@ export function Header() {
             <small className="text-sm font-medium text-fd-muted-foreground">A lightweight utility for color manipulation and conversion</small>
             <div className="mt-8 flex gap-6">
                 <Button className="rounded-tl-xl" asChild>
-                    <Link href='/getting-started'>
+                    <Link href='/docs/getting-started'>
                         Getting Started
                     </Link>
                 </Button>
