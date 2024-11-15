@@ -1,8 +1,8 @@
 ---
 name: "\U0001F3A8 Playground"
 about: Related to playground website
-title: ''
-labels: ''
+title: "[PLAYGROUND]: "
+labels: playground
 assignees: ''
 
 ---

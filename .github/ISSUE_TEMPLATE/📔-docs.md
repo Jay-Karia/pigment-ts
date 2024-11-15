@@ -2,7 +2,7 @@
 name: "\U0001F4D4 Docs"
 about: Related to documentation website
 title: 'DOCS: '
-labels: ''
+labels: documentation
 assignees: ''
 
 ---

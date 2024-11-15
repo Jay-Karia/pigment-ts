@@ -2,7 +2,7 @@
 name: "✨ Feature request"
 about: Suggest an idea for the core library
 title: "[FEATURE]: "
-labels: ''
+labels: enhancement
 assignees: ''
 
 ---

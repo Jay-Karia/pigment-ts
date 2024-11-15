@@ -2,7 +2,7 @@
 name: "\U0001F41B Bug report"
 about: Create a bug report for the core library
 title: "[BUG]: "
-labels: ''
+labels: bug
 assignees: ''
 
 ---
