@@ -11,7 +11,7 @@
 - [ ] Add support for Tailwind States (hover:, focus:, ...)
 - [ ] Add support for non standard tailwind colors (bg-[#efefef], text-[#efefef], ...)
 - [ ] Improve tailwind color conversion (can get nearest tailwind equivalent color)
-- [ ] New utilities: rgb(), hsl(), hex(), hsla(), rgba(), tailwind() for random color generation.
+- [x] New utilities: rgb(), hsl(), hex(), hsla(), rgba(), tailwind() for random color generation.
 - [ ] New format support: CMYK
 - [ ] New format support: HSV
 
