@@ -4,7 +4,7 @@ interface CodeState {
 }
 
 interface OutputState {
-  output: string,
+  output: string;
   updateOutput: (newOutput: string) => void;
 }
 

@@ -79,11 +79,9 @@ console.log(randomHex); // '#A1B2C3'
 
 See the [ROADMAP](ROADMAP.md) file for a list of features that are planned for future releases.
 
-
 ### 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 
 ### 🤝 Contribution
 

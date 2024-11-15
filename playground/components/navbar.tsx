@@ -27,7 +27,9 @@ export function Navbar() {
           return (
             <li key={index}>
               <Button asChild variant={"link"} className="text-white">
-                <Link href={link.href} target="_blank">{link.title}</Link>
+                <Link href={link.href} target="_blank">
+                  {link.title}
+                </Link>
               </Button>
             </li>
           );

@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import runCode from "@/actions/run-code";
 import { useCodeStore, useOutputStore } from "@/store";
-import React from "react"
-import {LanguageInfo} from "../language-info";
+import React from "react";
+import { LanguageInfo } from "../language-info";
 
 const geistSans = localFont({
   src: "../../app/fonts/GeistVF.woff",
@@ -19,8 +19,8 @@ export function TopBar() {
   const setOutput = useOutputStore(state => state.updateOutput);
 
   async function handleRun() {
-    const output = await runCode(code)
-    setOutput(output)
+    const output = await runCode(code);
+    setOutput(output);
   }
 
   return (
@@ -29,13 +29,10 @@ export function TopBar() {
         <LanguageInfo />
       </div>
       <div className="flex justify-between w-[30%] pl-6">
-        <Button
-        variant={"secondary"}
-        onClick={ handleRun }
-      >
-        Run
-      </Button>
+        <Button variant={"secondary"} onClick={handleRun}>
+          Run
+        </Button>
       </div>
     </div>
-  )
+  );
 }

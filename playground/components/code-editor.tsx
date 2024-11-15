@@ -13,9 +13,7 @@ export function CodeEditor() {
     null
   );
 
-  function handleEditorDidMount(
-    editor: monaco.editor.IStandaloneCodeEditor,
-  ) {
+  function handleEditorDidMount(editor: monaco.editor.IStandaloneCodeEditor) {
     editorRef.current = editor;
   }
 
