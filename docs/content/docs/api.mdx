@@ -81,6 +81,100 @@ const randomHex = pigment.randomColor("hex");
 console.log(randomHex); // '#A1B2C3'
 ```
 
+<Callout title="Note" type="info">
+  We have added individual utilities to generate random colors in different formats.
+</Callout>
+
+#### rgb
+
+| **Function**    | `pigment.rgb(): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random rgb color.                                                                                                                        |
+| **Parameters**  | None |
+| **Returns**     | A string value of the random rgb color.                                                                                                              |
+
+```ts title="index.ts"
+import pigment from "pigment-ts";
+
+const randomRgb = pigment.rgb();
+console.log(randomRgb); // 'rgb(20, 50, 120)'
+```
+
+#### hex
+
+| **Function**    | `pigment.hex(): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random hex color.                                                                                                                        |
+| **Parameters**  | None |
+| **Returns**     | A string value of the random hex color.                                                                                                              |
+
+```ts title="index.ts"
+import pigment from "pigment-ts";
+
+const randomHex = pigment.hex();
+console.log(randomHex); // '#A1B2C3'
+```
+
+#### hsl
+
+| **Function**    | `pigment.hsl(): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random hsl color.                                                                                                                        |
+| **Parameters**  | None |
+| **Returns**     | A string value of the random hsl color.                                                                                                              |
+
+```ts title="index.ts"
+import pigment from "pigment-ts";
+
+const randomHsl = pigment.hsl();
+console.log(randomHsl); // 'hsl(120, 100%, 50%)'
+```
+
+#### hsla
+
+| **Function**    | `pigment.hsla(): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random hsla color.                                                                                                                        |
+| **Parameters**  | None |
+| **Returns**     | A string value of the random hsla color.                                                                                                              |
+
+```ts title="index.ts"
+import pigment from "pigment-ts";
+
+const randomHsla = pigment.hsla();
+console.log(randomHsla); // 'hsla(120, 100%, 50%, 0.5)'
+```
+
+#### rgba
+
+| **Function**    | `pigment.rgba(): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random rgba color.                                                                                                                        |
+| **Parameters**  | None |
+| **Returns**     | A string value of the random rgba color.                                                                                                              |
+
+```ts title="index.ts"
+import pigment from "pigment-ts";
+
+const randomRgba = pigment.rgba();
+console.log(randomRgba); // 'rgba(20, 50, 120, 0.5)'
+```
+
+#### tw
+
+| **Function**    | `pigment.tw(prefix?: string): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random tailwind color.                                                                                                                        |
+| **Parameters**  | `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`) |
+| **Returns**     | A string value of the random tailwind color.                                                                                                              |
+
+```ts title="index.ts"
+import pigment from "pigment-ts";
+
+const randomTw = pigment.tw("bg");
+console.log(randomTw); // 'bg-green-200'
+```
+
 ---
 
 ### toTailwind
