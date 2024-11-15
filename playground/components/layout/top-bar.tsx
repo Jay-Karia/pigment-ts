@@ -7,6 +7,8 @@ import runCode from "@/actions/run-code";
 import { useCodeStore, useOutputStore } from "@/store";
 import React from "react";
 import { LanguageInfo } from "../language-info";
+import { Toggle } from "@/components/ui/toggle"
+import {PaintBucket} from "lucide-react"
 
 const geistSans = localFont({
   src: "../../app/fonts/GeistVF.woff",
@@ -32,6 +34,10 @@ export function TopBar() {
         <Button variant={"secondary"} onClick={handleRun}>
           Run
         </Button>
+        <Toggle variant={"custom"}>
+          <PaintBucket />
+        Colored text
+        </Toggle>
       </div>
     </div>
   );
