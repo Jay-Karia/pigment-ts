@@ -42,12 +42,12 @@ More features coming soon!
 Features that are ready for the next release. You can try them out in the [playground](https://playground-pigment.vercel.app/).
 They are marked with "(`pre`)" in documentation.
 
-- **[rgb](https://pigment-ts.vercel.app/docs/api#rgb)**: Randome rgb color
-- **[hsl](https://pigment-ts.vercel.app/docs/api#hsl)**: Randome hsl color
-- **[hex](https://pigment-ts.vercel.app/docs/api#hex)**: Randome hex color
-- **[hsla](https://pigment-ts.vercel.app/docs/api#hsla)**: Randome hsla color
-- **[rgba](https://pigment-ts.vercel.app/docs/api#rgba)**: Randome rgba color
-- **[tw](https://pigment-ts.vercel.app/docs/api#tw)**: Randome tailwind color
+- **[rgb](https://pigment-ts.vercel.app/docs/api#rgb-pre)**: Randome rgb color
+- **[hsl](https://pigment-ts.vercel.app/docs/api#hsl-pre)**: Randome hsl color
+- **[hex](https://pigment-ts.vercel.app/docs/api#hex-pre)**: Randome hex color
+- **[hsla](https://pigment-ts.vercel.app/docs/api#hsla-pre)**: Randome hsla color
+- **[rgba](https://pigment-ts.vercel.app/docs/api#rgba-pre)**: Randome rgba color
+- **[tw](https://pigment-ts.vercel.app/docs/api#tw-pre)**: Randome tailwind color
 
 ---
 
