@@ -20,5 +20,5 @@
 - [ ] Adjust the warmth or coolness of a color
 - [ ] Named colors support (CSS named colors)
 - [ ] Theme builder: generate light dark theme variants from base color and more.
-- [ ] Palette generator: tailwind color palettes form base color.
+- [ ] Palette generator: tailwind color palettes from base color.
 - [x] Add documentation
