@@ -8,7 +8,8 @@
     "start": "next start",
     "postinstall": "fumadocs-mdx",
     "format": "npx prettier . --write",
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.0",

@@ -1,23 +1,23 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 export const baseOptions: BaseLayoutProps = {
   nav: {
-    title: '🎨 PigmentTS',
+    title: "🎨 PigmentTS",
   },
   links: [
     {
-      text: 'Documentation',
-      url: '/docs',
-      active: 'nested-url',
+      text: "Documentation",
+      url: "/docs",
+      active: "nested-url",
     },
     {
       text: "Getting Started",
-      url: "/docs/getting-started"
+      url: "/docs/getting-started",
     },
     {
       text: "Playground",
       url: "https://pigment-ts.vercel.app/",
-    }
+    },
   ],
-  githubUrl: 'https://github.com/Jay-Karia/pigment-ts',
+  githubUrl: "https://github.com/Jay-Karia/pigment-ts",
 };

@@ -3,15 +3,15 @@ title: API Reference
 description: API reference for the library
 ---
 
-import { Callout } from 'fumadocs-ui/components/callout';
+import { Callout } from "fumadocs-ui/components/callout";
 
 ### convertColor
 
-| **Function**                  | `pigment.convertCOlor(color: string, format: Format, prefix?: string) : string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Converts a color from one format to another.                          |
-| **Parameters**                | `color` (string): The color value (e.g., `'#ff5733'`).<br/>`format` (Format): See all the [supported formats](/docs#supported-formats) <br/> `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`)               |
-| **Returns**                   | A string value of the converted color.                                |
+| **Function**    | `pigment.convertCOlor(color: string, format: Format, prefix?: string) : string`                                                                                                                             |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Converts a color from one format to another.                                                                                                                                                                |
+| **Parameters**  | `color` (string): The color value (e.g., `'#ff5733'`).<br/>`format` (Format): See all the [supported formats](/docs#supported-formats) <br/> `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`) |
+| **Returns**     | A string value of the converted color.                                                                                                                                                                      |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
@@ -21,21 +21,24 @@ const rgb = pigment.convertColor("#ff5733", "rgb");
 console.log(rgb); // 'rgb(255, 87, 51)'
 
 // Using prefix
-const tw = pigment.convertColor("#DCFCE7", "tw", "bg")
+const tw = pigment.convertColor("#DCFCE7", "tw", "bg");
 console.log(tw); // 'bg-green-200'
 ```
 
-<Callout title="Note" type="error">While converting hex to tailwind, use uppercase hex code. Support for lowecase will be added soon</Callout>
+<Callout title="Note" type="error">
+  While converting hex to tailwind, use uppercase hex code. Support for lowecase
+  will be added soon
+</Callout>
 
 ---
 
 ### lightenColor
 
-| **Function**                  | `pigment.lightenColor(color: string, percent: number) : string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Lightens a color by a specified percentage.                          |
-| **Parameters**                | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `percent` (number): Percentage to lighten (e.g., `0.3`)               |
-| **Returns**                   | A string value of the lightend color.                                |
+| **Function**    | `pigment.lightenColor(color: string, percent: number) : string`                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Lightens a color by a specified percentage.                                                                         |
+| **Parameters**  | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `percent` (number): Percentage to lighten (e.g., `0.3`) |
+| **Returns**     | A string value of the lightend color.                                                                               |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
@@ -48,11 +51,11 @@ console.log(lightened); // '#FF8A66'
 
 ### darkenColor
 
-| **Function**                  | `pigment.darkenColor(color: string, percent: number) : string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Darkens a color by a specified percentage.                          |
-| **Parameters**                | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `percent` (number): Percentage to darken (e.g., `0.3`)               |
-| **Returns**                   | A string value of the darkened color.                                |
+| **Function**    | `pigment.darkenColor(color: string, percent: number) : string`                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Darkens a color by a specified percentage.                                                                         |
+| **Parameters**  | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `percent` (number): Percentage to darken (e.g., `0.3`) |
+| **Returns**     | A string value of the darkened color.                                                                              |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
@@ -65,11 +68,11 @@ console.log(darkened); // '#D93C1A'
 
 ### randomColor
 
-| **Function**                  | `pigment.randomColor(format: Format, prefix?: string): string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Generates a random color.                          |
-| **Parameters**                | `format` (Format): See all the [supported formats](/docs#supported-formats) <br/> `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`)               |
-| **Returns**                   | A string value of the random color.                                |
+| **Function**    | `pigment.randomColor(format: Format, prefix?: string): string`                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Generates a random color.                                                                                                                        |
+| **Parameters**  | `format` (Format): See all the [supported formats](/docs#supported-formats) <br/> `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`) |
+| **Returns**     | A string value of the random color.                                                                                                              |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
@@ -82,33 +85,36 @@ console.log(randomHex); // '#A1B2C3'
 
 ### toTailwind
 
-| **Function**                  | `pigment.toTailwind(color: string, prefix?: string) : string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Converts a color to Tailwind.                          |
-| **Parameters**                | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`)               |
-| **Returns**                   | A string value of the tailwind color.                                |
+| **Function**    | `pigment.toTailwind(color: string, prefix?: string) : string`                                                              |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Converts a color to Tailwind.                                                                                              |
+| **Parameters**  | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `prefix` (string): Adds a tailwind prefix (e.g., `bg-red-500`) |
+| **Returns**     | A string value of the tailwind color.                                                                                      |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
 
-const tw = PigmentTS.toTailwind("#DCFCE7", "bg")
+const tw = PigmentTS.toTailwind("#DCFCE7", "bg");
 console.log(tw); // 'bg-green-100'
 
-const tw2 = PigmentTS.toTailwind("rgb(255, 87, 51)", "text")
+const tw2 = PigmentTS.toTailwind("rgb(255, 87, 51)", "text");
 console.log(tw2); // 'text-[#FF5733]'
 ```
 
-<Callout title="Note" type="error">Currently only the exact tailwind color will be converted. Support for nearest color will be added soon</Callout>
+<Callout title="Note" type="error">
+  Currently only the exact tailwind color will be converted. Support for nearest
+  color will be added soon
+</Callout>
 
 ---
 
 ### setOpacity
 
-| **Function**                  | `pigment.setOpacity(color: string, amount: number, to: Alpha) : string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Sets the opacity of a color.                          |
-| **Parameters**                | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `amount` (number): The opacity value (e.g., `0.5`) <br/> `to` (Alpha): The alpha format (e.g., `hsla and rgba`)               |
-| **Returns**                   | A string value of the color with opacity.                                |
+| **Function**    | `pigment.setOpacity(color: string, amount: number, to: Alpha) : string`                                                                                                     |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Sets the opacity of a color.                                                                                                                                                |
+| **Parameters**  | `color` (string): The color value (e.g., `'#ff5733'`).<br/> `amount` (number): The opacity value (e.g., `0.5`) <br/> `to` (Alpha): The alpha format (e.g., `hsla and rgba`) |
+| **Returns**     | A string value of the color with opacity.                                                                                                                                   |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
@@ -121,11 +127,11 @@ console.log(withOpacity); // 'rgba(255, 87, 51, 0.5)'
 
 ### blendColors
 
-| **Function**                  | `pigment.blendColors(color1: string, color2: string, ratio: number) : string` |
-|-------------------------------|-------------------------------------------------------------------------|
-| **Description**               | Blends two colors together.                          |
-| **Parameters**                | `color1` (string): The first color value (e.g., `'#ff5733'`).<br/> `color2` (string): The second color value (e.g., `'#ff5733'`).<br/> `ratio` (number): The percentage of the blend (e.g., `0.5`)               |
-| **Returns**                   | A string value of the blended color of the format of first color.                                |
+| **Function**    | `pigment.blendColors(color1: string, color2: string, ratio: number) : string`                                                                                                                      |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Blends two colors together.                                                                                                                                                                        |
+| **Parameters**  | `color1` (string): The first color value (e.g., `'#ff5733'`).<br/> `color2` (string): The second color value (e.g., `'#ff5733'`).<br/> `ratio` (number): The percentage of the blend (e.g., `0.5`) |
+| **Returns**     | A string value of the blended color of the format of first color.                                                                                                                                  |
 
 ```ts title="index.ts"
 import pigment from "pigment-ts";
@@ -135,7 +141,9 @@ console.log(blend); // '#994533'
 
 // Using prefix
 const tw = pigment.blendColors("bg-red-500", "rgb(41, 94, 150)", 0.2);
-console.log(tw) // 'bg-[#C74854]'
+console.log(tw); // 'bg-[#C74854]'
 ```
 
-<Callout title="Note" type="info">The prefix for Tailwind color will be taken from the first color.</Callout>
+<Callout title="Note" type="info">
+  The prefix for Tailwind color will be taken from the first color.
+</Callout>
