@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { useOutputStore } from "@/store";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
+import { useColoredTextStore } from "@/store";
+import React from "react";
 
 const geistSans = localFont({
   src: "../app/fonts/GeistVF.woff",
@@ -13,13 +15,22 @@ const geistSans = localFont({
 
 export function Console() {
   const output = useOutputStore(state => state.output);
+  const coloredText = useColoredTextStore(state => state.colored);
+
+  function getColored(line: string, colored: boolean): React.ReactNode {
+    return (
+      <span className={`${colored ? "text-blue-500" : ""}`}>
+        Hello
+      </span>
+    )
+  }
 
   function handleNewLine(output: string) {
     return output.split("\n").map((line, index) => {
       return (
         <div key={index} className="flex items-center">
           <span className="text-neutral-500">{">"}</span>
-          <span className="ml-2">{line}</span>
+          <span className="ml-2">{getColored(line, coloredText)}</span>
         </div>
       );
     });

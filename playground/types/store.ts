@@ -8,4 +8,9 @@ interface OutputState {
   updateOutput: (newOutput: string) => void;
 }
 
-export { type CodeState, type OutputState };
+interface ColoredTextState {
+  colored: boolean;
+  toggleColored: () => void;
+}
+
+export { type CodeState, type OutputState, type ColoredTextState };

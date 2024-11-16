@@ -7,8 +7,9 @@ import runCode from "@/actions/run-code";
 import { useCodeStore, useOutputStore } from "@/store";
 import React from "react";
 import { LanguageInfo } from "../language-info";
-import { Toggle } from "@/components/ui/toggle"
-import {PaintBucket} from "lucide-react"
+import { Toggle } from "@/components/ui/toggle";
+import { PaintBucket } from "lucide-react";
+import { useColoredTextStore } from "@/store";
 
 const geistSans = localFont({
   src: "../../app/fonts/GeistVF.woff",
@@ -19,6 +20,9 @@ const geistSans = localFont({
 export function TopBar() {
   const code = useCodeStore(state => state.code);
   const setOutput = useOutputStore(state => state.updateOutput);
+
+  const coloredText = useColoredTextStore(state => state.colored);
+  const toggleColoredText = useColoredTextStore(state => state.toggleColored);
 
   async function handleRun() {
     const output = await runCode(code);
@@ -34,9 +38,9 @@ export function TopBar() {
         <Button variant={"secondary"} onClick={handleRun}>
           Run
         </Button>
-        <Toggle variant={"custom"}>
+        <Toggle variant={"custom"} onClick={toggleColoredText} pressed={coloredText}>
           <PaintBucket />
-        Colored text
+          Colored text
         </Toggle>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { CodeState, OutputState } from "@/types/store";
+import { CodeState, ColoredTextState, OutputState } from "@/types/store";
 import { create } from "zustand";
 import { DEFAULT_CODE } from "@/constants";
 
@@ -12,4 +12,9 @@ const useOutputStore = create<OutputState>()(set => ({
   updateOutput: (newOutput: string) => set({ output: newOutput }),
 }));
 
-export { useCodeStore, useOutputStore };
+const useColoredTextStore = create<ColoredTextState>()(set => ({
+  colored: false,
+  toggleColored: () => set(state => ({ colored: !state.colored })),
+}));
+
+export { useCodeStore, useOutputStore, useColoredTextStore };
