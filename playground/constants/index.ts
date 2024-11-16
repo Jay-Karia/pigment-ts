@@ -1,6 +1,6 @@
 const DEFAULT_CODE = `// Use functions directly
-const randomRgb = rgb()
-const randomHex = hex()
+const randomRgb = randomColor("rgb")
+const randomHex = randomColor("hex")
 
 // or via PigmentTS object
 const blend = PigmentTS.blendColors(randomRgb, randomHex, 0.5);

@@ -22,21 +22,29 @@ export function Console() {
     let formatted: React.ReactNode;
 
     if (colored) {
-      const regexMatch = detectColor(line);
+      let nextColor = true;
+      let lineCopy = line;
+      const colors = [] as string[]; // Stores all the colors in the line
 
-      if (regexMatch) {
-        
-        const index = line.indexOf(regexMatch[0]);
-        const start = line.slice(0, index);
-        const end = line.slice(index + regexMatch[0].length);
-        const coloredSpan = <span style={{color: regexMatch[0]}}>{regexMatch[0]}</span>;
-        
-        formatted = <span >
-          {start}
-          {coloredSpan}
-          {end}
-        </span>;
+      while(nextColor) {
+       const detected = detectColor(lineCopy);
+       if (detected) {
+        const color = detected[0];
+        colors.push(color);
+        lineCopy = lineCopy.replaceAll(color, "");
+       } else {
+          nextColor = false;
+        }
       }
+
+      for (let i = 0; i < colors.length; i++) {
+        line = line.replaceAll(colors[i], `<span style="color:${colors[i]}">${colors[i]}</span>`);
+      }
+
+      console.log(line)
+
+      formatted = <span dangerouslySetInnerHTML={{__html: line}} />;
+      
     } else {
       formatted = <span>{line}</span>;
     }
