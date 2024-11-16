@@ -7,6 +7,8 @@ import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { useColoredTextStore } from "@/store";
 import React from "react";
 import { detectColor } from "@/lib/detectColor";
+import { detectFormat } from "@/lib/detectFormat";
+import { convertColor } from "pigment-ts";
 
 const geistSans = localFont({
   src: "../app/fonts/GeistVF.woff",
@@ -38,9 +40,14 @@ export function Console() {
       }
 
       for (let i = 0; i < colors.length; i++) {
+        let colorClass = colors[i];
+        // if color is tailwind, convert it to hex and update color class
+        const format = detectFormat(colors[i]);
+        if (format === "tw") colorClass = convertColor(colors[i], "hex");
+
         line = line.replaceAll(
           colors[i],
-          `<span style="color:${colors[i]}">${colors[i]}</span>`
+          `<span style="color:${colorClass}">${colors[i]}</span>`
         );
       }
 
