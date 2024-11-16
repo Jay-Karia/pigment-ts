@@ -56,6 +56,6 @@ export function rgbaToRgb(rgbaColor: string) {
   );
 }
 
-export function rgbToRgba(rgbColor: string): string {
-  return `rgba(${rgbColor.replace("rgb(", "").replace(")", "")}, 1)`;
+export function rgbToRgba(rgbColor: string, alpha?: string): string {
+  return `rgba(${rgbColor.replace("rgb(", "").replace(")", "")}, ${alpha ? alpha : "1"})`;
 }

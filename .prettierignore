@@ -1,2 +1,7 @@
 playground
 docs
+pnpm-lock.yml
+pnpm-workspace.yml
+turbo.json
+.github
+.vscode

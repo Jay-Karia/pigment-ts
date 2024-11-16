@@ -1,6 +1,14 @@
 import { convertColor } from "./utils/convertColor";
 import { lightenColor, darkenColor } from "./utils/lightenDarken";
-import { randomColor, rgb, hex, hsl, hsla, rgba, tw } from "./utils/randomColor";
+import {
+  randomColor,
+  rgb,
+  hex,
+  hsl,
+  hsla,
+  rgba,
+  tw,
+} from "./utils/randomColor";
 import { toTailwind } from "./utils/toTailwind";
 import { setOpacity } from "./utils/setOpacity";
 import { blendColors } from "./utils/blendColors";

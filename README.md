@@ -28,7 +28,6 @@ More features coming soon!
 
 ---
 
-
 ### 🔮 What's New in v0.2
 
 - Support for HSLA and RGBA formats

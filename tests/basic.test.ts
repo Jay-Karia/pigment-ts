@@ -271,7 +271,7 @@ describe("Random colors", () => {
 
     it("should generate a random hex color with respective function", () => {
       expect(PigmentTS.hex()).toMatch(/^#[0-9A-F]{6}$/);
-    })
+    });
   });
 
   // random rgb
@@ -282,7 +282,7 @@ describe("Random colors", () => {
 
     it("should generate a random rgb color with respective function", () => {
       expect(PigmentTS.rgb()).toMatch(/^rgb\(\d{1,3}, \d{1,3}, \d{1,3}\)$/);
-    })
+    });
   });
 
   // random hsl
@@ -294,10 +294,8 @@ describe("Random colors", () => {
     });
 
     it("should generate a random hsl color with respective function", () => {
-      expect(PigmentTS.hsl()).toMatch(
-        /^hsl\(\d{1,3}, \d{1,3}%, \d{1,3}%\)$/
-      );
-    })
+      expect(PigmentTS.hsl()).toMatch(/^hsl\(\d{1,3}, \d{1,3}%, \d{1,3}%\)$/);
+    });
   });
 
   // random rgba
@@ -312,7 +310,7 @@ describe("Random colors", () => {
       expect(PigmentTS.rgba()).toMatch(
         /rgba\((\d{1,3}), (\d{1,3}), (\d{1,3}), ([0-1](\.\d+)?)\)/
       );
-    })
+    });
   });
 
   // random hsla
@@ -327,6 +325,6 @@ describe("Random colors", () => {
       expect(PigmentTS.hsla()).toMatch(
         /hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%, ([0-1](\.\d+)?)\)/
       );
-    })
+    });
   });
 });

@@ -39,6 +39,8 @@ export function Console() {
         }
       }
 
+      console.log(colors);
+
       for (let i = 0; i < colors.length; i++) {
         let colorClass = colors[i];
         // if color is tailwind, convert it to hex and update color class

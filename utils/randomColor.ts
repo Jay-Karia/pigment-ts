@@ -1,3 +1,4 @@
+import { rgbToRgba, rgbaToHsla } from "../lib/hslaAndRgba";
 import { randomTw } from "../lib/randomTw";
 import { Format } from "../types/format";
 import { convertColor } from "./convertColor";
@@ -14,6 +15,14 @@ export function randomColor(format: Format, prefix?: string): string {
   const randomRgbColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(
     Math.random() * 256
   )}, ${Math.floor(Math.random() * 256)})`;
+
+  if (format === "rgba" || format === "hsla") {
+    const alpha = Math.random().toFixed(1);
+    const rgbaColor = rgbToRgba(randomRgbColor, alpha);
+    const hslaColor = rgbaToHsla(rgbaColor);
+
+    return format === "rgba" ? rgbaColor : hslaColor;
+  }
 
   return convertColor(randomRgbColor, format);
 }
