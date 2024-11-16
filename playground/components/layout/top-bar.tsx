@@ -38,7 +38,11 @@ export function TopBar() {
         <Button variant={"secondary"} onClick={handleRun}>
           Run
         </Button>
-        <Toggle variant={"custom"} onClick={toggleColoredText} pressed={coloredText}>
+        <Toggle
+          variant={"custom"}
+          onClick={toggleColoredText}
+          pressed={coloredText}
+        >
           <PaintBucket />
           Colored text
         </Toggle>

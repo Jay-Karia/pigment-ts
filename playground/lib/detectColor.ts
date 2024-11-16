@@ -1,4 +1,4 @@
-import {Format} from "@/types/format";
+import { Format } from "@/types/format";
 
 export function detectColor(line: string) {
   const formats = ["rgb", "hex", "hsl", "tw", "rgba", "hsla"] as Format[];
@@ -13,8 +13,7 @@ export function detectColor(line: string) {
   } as Record<string, RegExp>;
 
   for (const format of formats)
-    if (regex[format].exec(line))
-      return regex[format].exec(line);
+    if (regex[format].exec(line)) return regex[format].exec(line);
 
   return null;
 }

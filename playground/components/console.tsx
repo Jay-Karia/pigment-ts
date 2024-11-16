@@ -6,7 +6,7 @@ import { useOutputStore } from "@/store";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { useColoredTextStore } from "@/store";
 import React from "react";
-import {detectColor} from "@/lib/detectColor";
+import { detectColor } from "@/lib/detectColor";
 
 const geistSans = localFont({
   src: "../app/fonts/GeistVF.woff",
@@ -26,30 +26,30 @@ export function Console() {
       let lineCopy = line;
       const colors = [] as string[]; // Stores all the colors in the line
 
-      while(nextColor) {
-       const detected = detectColor(lineCopy);
-       if (detected) {
-        const color = detected[0];
-        colors.push(color);
-        lineCopy = lineCopy.replaceAll(color, "");
-       } else {
+      while (nextColor) {
+        const detected = detectColor(lineCopy);
+        if (detected) {
+          const color = detected[0];
+          colors.push(color);
+          lineCopy = lineCopy.replaceAll(color, "");
+        } else {
           nextColor = false;
         }
       }
 
       for (let i = 0; i < colors.length; i++) {
-        line = line.replaceAll(colors[i], `<span style="color:${colors[i]}">${colors[i]}</span>`);
+        line = line.replaceAll(
+          colors[i],
+          `<span style="color:${colors[i]}">${colors[i]}</span>`
+        );
       }
 
-      console.log(line)
-
-      formatted = <span dangerouslySetInnerHTML={{__html: line}} />;
-      
+      formatted = <span dangerouslySetInnerHTML={{ __html: line }} />;
     } else {
       formatted = <span>{line}</span>;
     }
 
-    return formatted
+    return formatted;
   }
 
   function handleNewLine(output: string) {
