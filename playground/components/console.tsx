@@ -6,6 +6,7 @@ import { useOutputStore } from "@/store";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { useColoredTextStore } from "@/store";
 import React from "react";
+import {detectColor} from "@/lib/detectColor";
 
 const geistSans = localFont({
   src: "../app/fonts/GeistVF.woff",
@@ -18,11 +19,29 @@ export function Console() {
   const coloredText = useColoredTextStore(state => state.colored);
 
   function getColored(line: string, colored: boolean): React.ReactNode {
-    return (
-      <span className={`${colored ? "text-blue-500" : ""}`}>
-        Hello
-      </span>
-    )
+    let formatted: React.ReactNode;
+
+    if (colored) {
+      const regexMatch = detectColor(line);
+
+      if (regexMatch) {
+        
+        const index = line.indexOf(regexMatch[0]);
+        const start = line.slice(0, index);
+        const end = line.slice(index + regexMatch[0].length);
+        const coloredSpan = <span style={{color: regexMatch[0]}}>{regexMatch[0]}</span>;
+        
+        formatted = <span >
+          {start}
+          {coloredSpan}
+          {end}
+        </span>;
+      }
+    } else {
+      formatted = <span>{line}</span>;
+    }
+
+    return formatted
   }
 
   function handleNewLine(output: string) {

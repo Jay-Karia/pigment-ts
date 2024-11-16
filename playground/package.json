@@ -22,7 +22,7 @@
     "lucide-react": "^0.454.0",
     "monaco-editor": "^0.52.0",
     "next": "15.0.2",
-    "pigment-ts": "workspace:*",
+    "pigment-ts": "^0.2.7",
     "prismjs": "^1.29.0",
     "react": "^16.8 || ^17.0 || ^18.0 || ^19.0",
     "react-dom": "^16.8 || ^17.0 || ^18.0 || ^19.0",
