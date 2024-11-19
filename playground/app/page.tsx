@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/navbar";
-import { CodeEditor } from "@/components/code-editor";
 import { Console } from "@/components/console";
 import { Playground } from "@/components/layout/playground";
+import { CodeEditor } from "@/components/code-editor";
 
 export default function Home() {
   return (

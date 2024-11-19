@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useCodeStore } from "@/store";
-import Editor from "@monaco-editor/react";
 import * as monaco from "monaco-editor";
+import dynamic from "next/dynamic";
 
 export function CodeEditor() {
   const code = useCodeStore(state => state.code);
@@ -12,6 +12,11 @@ export function CodeEditor() {
   const editorRef = React.useRef<monaco.editor.IStandaloneCodeEditor | null>(
     null
   );
+
+  const DynamicEditor = dynamic(() => import("@monaco-editor/react"), {
+    loading: () => <p>Dynamic Loading...</p>,
+    ssr: false,
+  });
 
   function handleEditorDidMount(editor: monaco.editor.IStandaloneCodeEditor) {
     editorRef.current = editor;
@@ -24,7 +29,7 @@ export function CodeEditor() {
 
   return (
     <div className="w-full p-4 bg-zinc-900">
-      <Editor
+      <DynamicEditor
         height="85vh"
         defaultLanguage="javascript"
         defaultValue={code}
