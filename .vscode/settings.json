@@ -3,5 +3,5 @@
   "editor.fontLigatures": true,
   "editor.autoClosingBrackets": "always",
   "workbench.iconTheme": "gruvbox-material-icon-theme",
-  "workbench.colorTheme": "Monokai Classic",
+  "workbench.colorTheme": "Monokai Pro",
 }
