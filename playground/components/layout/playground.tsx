@@ -1,6 +1,6 @@
 "use client";
 
-import { TopBar } from "./top-bar";
+import { TopBar } from "../top-bar";
 
 type PlaygroundProps = {
   editor: React.ReactNode;
