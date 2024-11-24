@@ -5,10 +5,34 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      root: ${{ steps.filter.outputs.root }}
+      playground: ${{ steps.filter.outputs.playground }}
+      docs: ${{ steps.filter.outputs.docs }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            root:
+              - '!{playground,docs}/**'
+              - '*.{ts,tsx,js,jsx,json}'
+              - 'package.json'
+              - 'tsconfig.json'
+            playground:
+              - 'playground/**'
+            docs:
+              - 'docs/**'
+
   build-root:
-    if: github.workspace == '.'
+    needs: changes
+    if: ${{ needs.changes.outputs.root == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +42,10 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-  
+
   build-playground:
-    if: contains(github.event.head_commit.modified, 'playground/') || contains(github.event.pull_request.changed_files, 'playground/')
+    needs: changes
+    if: ${{ needs.changes.outputs.playground == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -36,7 +61,8 @@ jobs:
       - run: npm run build
 
   build-docs:
-    if: contains(github.event.head_commit.modified, 'docs/') || contains(github.event.pull_request.changed_files, 'docs/')
+    needs: changes
+    if: ${{ needs.changes.outputs.docs == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:

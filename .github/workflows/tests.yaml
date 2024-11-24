@@ -5,10 +5,28 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
-  test:
-    if: github.workspace == '.'
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      root: ${{ steps.filter.outputs.root }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            root:
+              - '!{playground,docs}/**'
+              - '*.{ts,tsx,js,jsx,json}'
+              - 'package.json'
+              - 'tsconfig.json'
+
+  test-root:
+    needs: changes
+    if: ${{ needs.changes.outputs.root == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,4 +35,4 @@ jobs:
           node-version: '18'
           cache: 'npm'
       - run: npm ci
-      - run: npm run test
+      - run: npm test
