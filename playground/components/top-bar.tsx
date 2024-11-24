@@ -37,20 +37,16 @@ export function TopBar() {
         <LanguageInfo />
       </div>
       <div className="flex justify-between w-[30%] pl-6">
-        <LoadingButton
-          variant={"secondary"}
-          onClick={handleRun}
-          loading={loading}
-        >
+        <LoadingButton variant={"retro2"} onClick={handleRun} loading={loading}>
           Run
         </LoadingButton>
         <Toggle
-          variant={"custom"}
+          variant={"retroGhost"}
           onClick={toggleColoredText}
           pressed={coloredText}
         >
           <PaintBucket />
-          Colored text
+          <span className="text-black font-medium">Colored text</span>
         </Toggle>
       </div>
     </div>

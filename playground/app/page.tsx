@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import { Navbar } from "@/components/layout/navbar";
 import { Console } from "@/components/console";
 import { Playground } from "@/components/layout/playground";
 import { CodeEditor } from "@/components/code-editor";

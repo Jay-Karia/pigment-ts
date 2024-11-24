@@ -25,16 +25,18 @@ export function CodeEditor() {
   }
 
   return (
-    <div className="w-full p-4 bg-zinc-900 flex justify-center items-center h-full">
+    <div className="w-full p-4 bg-zinc-900 h-full">
       {!loaded && (
-        <Button
-          onClick={() => {
-            setLoaded(true);
-          }}
-          variant={"retro"}
-        >
-          Load Editor
-        </Button>
+        <div className="w-full h-full flex justify-center items-center bg-zinc-900/90 backdrop-blur-sm after:content-[''] shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]">
+          <Button
+            onClick={() => {
+              setLoaded(true);
+            }}
+            variant={"retro"}
+          >
+            Load Editor
+          </Button>
+        </div>
       )}
       {loaded && (
         <Editor
