@@ -39,8 +39,6 @@ export function Console() {
         }
       }
 
-      console.log(colors);
-
       for (let i = 0; i < colors.length; i++) {
         let colorClass = colors[i];
         // if color is tailwind, convert it to hex and update color class
@@ -74,7 +72,9 @@ export function Console() {
 
   return (
     <div className="w-full h-full p-4 bg-neutral-900 text-white">
-      <div className={cn("h-full bg-neutral-800 p-4", geistSans.className)}>
+      <div className={cn(
+          geistSans.className, "p-4 text-sm text-white/90 font-medium tracking-wide leading-relaxed [&>*]:relative [&>*]:z-10 relative min-h-[200px] h-full border border-white/20 bg-zinc-900/90 backdrop-blur-sm after:content-[''] after:absolute after:inset-0 after:bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.2)_50%)] after:bg-[length:100%_4px] after:pointer-events-none shadow-[inset_0_0_30px_rgba(0,0,0,0.5)]"
+        )}>
         <ScrollArea className="h-[80vh] overflow-auto">
           {handleNewLine(output)}
           <ScrollBar orientation="horizontal" />

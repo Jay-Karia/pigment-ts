@@ -15,6 +15,8 @@ const toggleVariants = cva(
         outline:
           "border border-input bg-transparent shadow-sm hover:bg-accent hover:text-accent-foreground",
         custom: "data-[state=on]:text-yellow-400",
+        retroGhost:
+          "bg-yellow-300/40 backdrop-blur-sm border border-black/60 text-black font-medium shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] active:shadow-none active:translate-x-[2px] active:translate-y-[2px] data-[state=on]:bg-yellow-400 data-[state=on]:text-black data-[state=on]:border-black transition-all duration-200",
       },
       size: {
         default: "h-9 px-2 min-w-9",
