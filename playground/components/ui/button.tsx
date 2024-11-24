@@ -19,6 +19,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary hover:bg-slate-800 hover:cursor-pointer",
+        glow: "relative overflow-hidden bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500  text-zinc-900 font-semibold hover:scale-[1.02] active:scale-[0.98] before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-1000 ",
+        retro: "bg-yellow-400 text-black border-b-4 border-yellow-600 hover:border-b-0 hover:translate-y-1 active:bg-yellow-500 transition-all",
       },
       size: {
         default: "h-9 px-4 py-2",

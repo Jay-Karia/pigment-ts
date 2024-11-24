@@ -1,4 +1,4 @@
-import {Button,ButtonProps} from "@/components/ui/button";
+import { Button, ButtonProps } from "@/components/ui/button";
 
 interface IProps extends ButtonProps {
   loading: boolean;
@@ -11,7 +11,7 @@ export function LoadingButton(props: IProps) {
       <Button
         {...rest}
         disabled={loading}
-        className={`relative flex items-center justify-center w-full ${loading ? 'cursor-not-allowed' : ''}`}
+        className={`relative flex items-center justify-center w-full ${loading ? "cursor-not-allowed" : ""}`}
       >
         {loading ? (
           <div className="w-full">

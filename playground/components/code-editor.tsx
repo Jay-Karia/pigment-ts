@@ -3,20 +3,17 @@
 import React from "react";
 import { useCodeStore } from "@/store";
 import * as monaco from "monaco-editor";
-import dynamic from "next/dynamic";
+import { Editor } from "@monaco-editor/react";
+import { Button } from "./ui";
 
 export function CodeEditor() {
   const code = useCodeStore(state => state.code);
   const setCode = useCodeStore(state => state.updateCode);
+  const [loaded, setLoaded] = React.useState(false);
 
   const editorRef = React.useRef<monaco.editor.IStandaloneCodeEditor | null>(
     null
   );
-
-  const DynamicEditor = dynamic(() => import("@monaco-editor/react"), {
-    loading: () => <p>Dynamic Loading...</p>,
-    ssr: false,
-  });
 
   function handleEditorDidMount(editor: monaco.editor.IStandaloneCodeEditor) {
     editorRef.current = editor;
@@ -28,15 +25,27 @@ export function CodeEditor() {
   }
 
   return (
-    <div className="w-full p-4 bg-zinc-900">
-      <DynamicEditor
-        height="85vh"
-        defaultLanguage="javascript"
-        defaultValue={code}
-        onMount={handleEditorDidMount}
-        onChange={handleEditorChange}
-        theme="vs-dark"
-      />
+    <div className="w-full p-4 bg-zinc-900 flex justify-center items-center h-full">
+      {!loaded && (
+        <Button
+          onClick={() => {
+            setLoaded(true);
+          }}
+          variant={"retro"}
+        >
+          Load Editor
+        </Button>
+      )}
+      {loaded && (
+        <Editor
+          height="85vh"
+          defaultLanguage="javascript"
+          defaultValue={code}
+          onMount={handleEditorDidMount}
+          onChange={handleEditorChange}
+          theme="vs-dark"
+        />
+      )}
     </div>
   );
 }
