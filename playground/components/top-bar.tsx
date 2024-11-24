@@ -1,18 +1,17 @@
 "use client";
 
-import localFont from "next/font/local";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import runCode from "@/actions/run-code";
-import { useCodeStore, useOutputStore } from "@/store";
-import React from "react";
-import { LanguageInfo } from "./language-info";
-import { Toggle } from "@/components/ui/toggle";
-import { PaintBucket } from "lucide-react";
-import { useColoredTextStore } from "@/store";
+import {Toggle} from "@/components/ui/toggle";
+import {cn} from "@/lib/utils";
+import {useCodeStore,useColoredTextStore,useOutputStore} from "@/store";
+import {PaintBucket} from "lucide-react";
+import localFont from "next/font/local";
+import {useState} from "react";
+import {LanguageInfo} from "./language-info";
+import {LoadingButton} from "./ui/loading-button";
 
 const geistSans = localFont({
-  src: "../app/fonts/GeistMonoVF.woff",
+  src: "../app/fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
@@ -20,13 +19,16 @@ const geistSans = localFont({
 export function TopBar() {
   const code = useCodeStore(state => state.code);
   const setOutput = useOutputStore(state => state.updateOutput);
+  const [loading, setLoading] = useState<boolean>(false)
 
   const coloredText = useColoredTextStore(state => state.colored);
   const toggleColoredText = useColoredTextStore(state => state.toggleColored);
 
   async function handleRun() {
+    setLoading(true)
     const output = await runCode(code);
     setOutput(output);
+    setLoading(false)
   }
 
   return (
@@ -35,9 +37,9 @@ export function TopBar() {
         <LanguageInfo />
       </div>
       <div className="flex justify-between w-[30%] pl-6">
-        <Button variant={"secondary"} onClick={handleRun}>
+        <LoadingButton variant={"secondary"} onClick={handleRun} loading={loading}>
           Run
-        </Button>
+        </LoadingButton>
         <Toggle
           variant={"custom"}
           onClick={toggleColoredText}
