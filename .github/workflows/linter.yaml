@@ -1,16 +1,68 @@
 name: Linter
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - '**.ts'
+      - '**.tsx'
+      - '**.js'
+      - '**.jsx'
+      - 'package.json'
+      - '.eslintrc.*'
+      - 'playground/**'
+      - 'docs/**'
+  pull_request:
+    paths:
+      - '**.ts'
+      - '**.tsx'
+      - '**.js'
+      - '**.jsx'
+      - 'package.json'
+      - '.eslintrc.*'
+      - 'playground/**'
+      - 'docs/**'
 
 jobs:
-  lint:
+  lint-root:
+    if: github.workspace == '.'
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
 
-    - name: Install dependencies
-      run: npm install
+  lint-playground:
+    if: contains(github.event.head_commit.modified, 'playground/') || contains(github.event.pull_request.changed_files, 'playground/')
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./playground
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: './playground/package-lock.json'
+      - run: npm ci
+      - run: npm run lint
 
-    - name: Lint
-      run: npm run lint
+  lint-docs:
+    if: contains(github.event.head_commit.modified, 'docs/') || contains(github.event.pull_request.changed_files, 'docs/')
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./docs
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: './docs/package-lock.json'
+      - run: npm ci
+      - run: npm run lint
