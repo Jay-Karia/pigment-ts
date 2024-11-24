@@ -1,5 +1,5 @@
-pnpm-lock.yml
-pnpm-workspace.yml
+pnpm-lock.yaml
+pnpm-workspace.yaml
 turbo.json
 .github
 .vscode

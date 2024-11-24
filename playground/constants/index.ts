@@ -2,12 +2,14 @@ const DEFAULT_CODE = `// Use functions directly
 const randomRgb = randomColor("rgb")
 const randomHex = randomColor("hex")
 
+const ratio = 0.5
+
 // or via PigmentTS object
-const blend = PigmentTS.blendColors(randomRgb, randomHex, 0.5);
+const blend = PigmentTS.blendColors(randomRgb, randomHex, ratio);
 
 console.log("Color 1: " + randomRgb)
 console.log("Color 2: " + randomHex)
-console.log("Blend (50%): " + blend)`;
+console.log("Blend (" + (ratio * 100) + "%): " + blend)`;
 
 const LANGUAGE_INFO = {
   language: "javascript",
