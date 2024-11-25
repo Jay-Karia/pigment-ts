@@ -8,14 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  changes:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
 
   build-root:
-    needs: changes
-    if: ${{ needs.changes.outputs.root == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -27,7 +21,6 @@ jobs:
       - run: npm run build
 
   build-playground:
-    needs: changes
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -42,8 +35,6 @@ jobs:
       - run: npm run build
 
   build-docs:
-    needs: changes
-    if: ${{ needs.changes.outputs.docs == 'true' }}
     runs-on: ubuntu-latest
     defaults:
       run:
