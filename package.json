@@ -29,7 +29,7 @@
   "bugs": {
     "url": "https://github.com/Jay-Karia/pigment-ts/issues"
   },
-  "homepage": "https://github.com/Jay-Karia/pigment-ts#readme",
+  "homepage": "https://pigment-ts.vercel.app/",
   "keywords": [
     "typescript",
     "color",
