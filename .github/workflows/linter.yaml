@@ -10,7 +10,6 @@ on:
       - 'package.json'
       - '.eslintrc.*'
       - './playground/**'
-      - './docs/**'
   pull_request:
     paths:
       - '**.ts'
@@ -20,7 +19,6 @@ on:
       - 'package.json'
       - '.eslintrc.*'
       - './playground/**'
-      - './docs/**'
 
 jobs:
   lint-root:
@@ -39,20 +37,6 @@ jobs:
     defaults:
       run:
         working-directory: ./playground
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '20'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
-
-  lint-docs:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./docs
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
