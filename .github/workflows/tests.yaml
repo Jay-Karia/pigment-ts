@@ -8,31 +8,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      root: ${{ steps.filter.outputs.root }}
-    steps:
-      - uses: actions/checkout@v3
-      - uses: dorny/paths-filter@v2
-        id: filter
-        with:
-          filters: |
-            root:
-              - '!{playground,docs}/**'
-              - '*.{ts,tsx,js,jsx,json}'
-              - 'package.json'
-              - 'tsconfig.json'
-
   test-root:
-    needs: changes
-    if: ${{ needs.changes.outputs.root == 'true' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '20'
           cache: 'npm'
       - run: npm ci
       - run: npm test
